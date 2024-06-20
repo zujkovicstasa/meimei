@@ -32,15 +32,16 @@
     width: 350px;
     height: 400px;
     font-family: "Roboto Mono", monospace;
+    border: 1px solid red;
   }
   
   .product-item img {
-    width: 100px;
+    width: 150px;
     height: auto;
   }
   
   h3 {
-     
+    padding-top: 20px;
     color: red;
   }
   

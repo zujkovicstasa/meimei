@@ -36,11 +36,11 @@
   
   <style scoped>
   .cart {
-    width: 25%;
-    border: 1px solid #ff9999;
+    width: 20%;
+    
     padding: 20px;
     background-color: #ffe5e5;
-    border-radius: 5px;
+    
     font-family: "Roboto Mono", monospace;
   }
   
