@@ -23,11 +23,12 @@
   </script>
   
   <style scoped>
+  
   .product-item {
 
     padding: 20px;
     text-align: center;
-    background-color: #ffe5e5;
+    background-color: rgb(249, 213, 219);
     width: 350px;
     height: 400px;
   }
@@ -38,7 +39,7 @@
   }
   
   h3 {
-    font-family: 'Arial, sans-serif'; /* Update with your specific font if needed */
+     /* Update with your specific font if needed */
     color: red;
   }
   

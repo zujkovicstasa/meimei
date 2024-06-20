@@ -22,8 +22,8 @@
     data() {
       return {
         products: [
-          { id: 1, name: 'Ha Gao de Gambas', price: 6.80, description: 'Pasta de trigo crujiente rellena de gambas.', image: 'path/to/image1.jpg' },
-          { id: 2, name: 'Gyoza Cerdo y Verduras', price: 6.80, description: 'Pasta de trigo a la plancha relleno de carne de cerdo.', image: 'path/to/image2.jpg' },
+          { id: 1, name: 'Jelo 1', price: 6.80, description: 'Opis Jela 1', image: '/Hrana/springrolls.PNG' },
+          { id: 2, name: 'Jelo 2', price: 6.80, description: 'Opis Jela 2', image: '/Hrana/baobuns.PNG' },
           // Add more products here
         ]
       }
