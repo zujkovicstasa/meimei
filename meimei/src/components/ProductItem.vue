@@ -4,7 +4,7 @@
       <h3>{{ product.name }} (3U)</h3>
       <p>{{ product.description }}</p>
       <p>€{{ product.price.toFixed(2) }}</p>
-      <button @click="addToCart">Añadir</button>
+      <button @click="addToCart">Dodaj</button>
     </div>
   </template>
   
@@ -24,11 +24,12 @@
   
   <style scoped>
   .product-item {
-    border: 1px solid #ff9999;
+
     padding: 20px;
     text-align: center;
     background-color: #ffe5e5;
-    border-radius: 5px;
+    width: 350px;
+    height: 400px;
   }
   
   .product-item img {
@@ -38,16 +39,17 @@
   
   h3 {
     font-family: 'Arial, sans-serif'; /* Update with your specific font if needed */
-    color: #ff6666;
+    color: red;
   }
   
   button {
-    background-color: #ff6666;
+    background-color: red;
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
+    font-style: bold;
   }
   
   button:hover {

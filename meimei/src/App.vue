@@ -12,11 +12,10 @@
 
 <script>
 import Header_vue from './components/Header.vue'
+import Navbar_vue from './components/Navbar.vue'
 import ProductList from './components/ProductList.vue'
 import Cart_vue from './components/Cart.vue'
 import Footer_vue from './components/Footer.vue'
-import Navbar_Vue from './components/Navbar.vue'
-
 
 export default {
   name: 'App',
@@ -34,16 +33,32 @@ export default {
 /* Global styles */
 body {
   font-family: 'Arial, sans-serif';
-  background-color: #ffefef;
+  background-color: rgb(249, 213, 219);
   margin: 0;
   padding: 0;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .main-content {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  background-color: #ffefef;
+  background-color: rgb(249, 213, 219);
+  flex: 1;
+}
+
+footer {
+  background-color: rgb(249, 213, 219);
+  text-align: center;
+  padding: 20px;
 }
 </style>

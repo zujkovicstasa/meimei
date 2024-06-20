@@ -33,8 +33,11 @@
   
   <style scoped>
   .navbar {
-    background-color: #343a40;
+    border-top: 2px solid red;
+    background-color:  rgb(249, 213, 219);
     padding: 10px;
+    border-bottom: 2px solid red;
+    
   }
   
   .navbar ul {
@@ -49,7 +52,7 @@
   }
   
   .navbar a {
-    color: #ffffff;
+    color: red;
     text-decoration: none;
     padding: 10px;
   }

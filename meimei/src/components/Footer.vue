@@ -13,9 +13,13 @@
   <style scoped>
   .site-footer {
     text-align: center;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-top: 1px solid #dee2e6;
+    padding: 10px;
+    background-color: rgb(249, 213, 219);
+    border-top: 2px solid red;
+  }
+  .site-footer p{
+    font-size:15px;
+    color:red;
   }
   </style>
   

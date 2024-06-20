@@ -1,13 +1,13 @@
 <template>
     <div class="cart">
-      <h2>Cesta</h2>
-      <div v-if="cartItems.length === 0">No hay productos en la cesta.</div>
+      <h2>Korpa</h2>
+      <div v-if="cartItems.length === 0">Vaša korpa je prazna...</div>
       <div v-else>
         <div v-for="item in cartItems" :key="item.id" class="cart-item">
           <p>{{ item.name }} - €{{ item.price.toFixed(2) }}</p>
         </div>
         <p>Total: €{{ totalPrice.toFixed(2) }}</p>
-        <button @click="checkout">Finalizar Compra</button>
+        <button @click="checkout">Plat</button>
       </div>
     </div>
   </template>
@@ -28,7 +28,7 @@
     methods: {
       checkout() {
         // Implement checkout logic
-        alert('Compra finalizada')
+        alert('Checkout')
       }
     }
   }

@@ -1,6 +1,6 @@
 <template>
     <div class="product-list">
-      <h2>Dim Sum</h2>
+      
       <div class="products">
         <ProductItem
           v-for="product in products"
@@ -33,9 +33,11 @@
   
   <style scoped>
   .product-list {
+    
     width: 70%;
   }
   .products {
+    
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
