@@ -14,6 +14,9 @@
   .site-footer {
     text-align: center;
     padding: 10px;
+    position:absolute;
+    bottom:0;
+    width:100%;
     background-color: rgb(249, 213, 219);
     border-top: 2px solid red;
   }
