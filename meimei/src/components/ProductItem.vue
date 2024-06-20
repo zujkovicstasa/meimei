@@ -1,7 +1,7 @@
 <template>
     <div class="product-item">
       <img :src="product.image" :alt="product.name" />
-      <h3>{{ product.name }} (3U)</h3>
+      <h3>{{ product.name }}</h3>
       <p>{{ product.description }}</p>
       <p>€{{ product.price.toFixed(2) }}</p>
       <button @click="addToCart">Dodaj</button>
