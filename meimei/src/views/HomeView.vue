@@ -24,5 +24,6 @@ export default {
   justify-content: space-between;
   padding: 20px;
   background-color: rgb(249, 213, 219);
+  font-family: "Roboto Mono", monospace;
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
     <div class="cart">
-      <h2>Korpa</h2>
+      <h2>korpa</h2>
       <div v-if="cartItems.length === 0">Vaša korpa je prazna...</div>
       <div v-else>
         <div v-for="item in cartItems" :key="item.id" class="cart-item">
           <p>{{ item.name }} - €{{ item.price.toFixed(2) }}</p>
         </div>
         <p>Total: €{{ totalPrice.toFixed(2) }}</p>
-        <button @click="checkout">Plat</button>
+        <button @click="checkout">Platite</button>
       </div>
     </div>
   </template>
@@ -41,6 +41,7 @@
     padding: 20px;
     background-color: #ffe5e5;
     border-radius: 5px;
+    font-family: "Roboto Mono", monospace;
   }
   
   .cart-item {
@@ -48,7 +49,7 @@
   }
   
   h2 {
-    font-family: 'Arial, sans-serif'; /* Update with your specific font if needed */
+    font-family: "Roboto Mono", monospace; /* Update with your specific font if needed */
     color: #ff6666;
   }
   

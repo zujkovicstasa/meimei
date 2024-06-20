@@ -25,7 +25,7 @@ export default {
 <style>
 /* Global styles */
 body {
-  font-family: 'Arial, sans-serif';
+  font-family: "Roboto Mono", monospace;
   background-color: rgb(249, 213, 219);
   margin: 0;
   padding: 0;
@@ -40,6 +40,8 @@ body {
   flex-direction: column;
   flex: 1;
 }
+
+
 
 footer {
   background-color: rgb(249, 213, 219);

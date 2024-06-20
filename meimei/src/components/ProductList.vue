@@ -41,6 +41,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    font-family: "Roboto Mono", monospace;
   }
   </style>
   

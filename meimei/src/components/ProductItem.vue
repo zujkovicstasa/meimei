@@ -25,12 +25,13 @@
   <style scoped>
   
   .product-item {
-
+    
     padding: 20px;
     text-align: center;
     background-color: rgb(249, 213, 219);
     width: 350px;
     height: 400px;
+    font-family: "Roboto Mono", monospace;
   }
   
   .product-item img {
@@ -39,7 +40,7 @@
   }
   
   h3 {
-     /* Update with your specific font if needed */
+     
     color: red;
   }
   

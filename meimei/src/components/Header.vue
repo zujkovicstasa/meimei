@@ -22,7 +22,7 @@ export default {
 .logo {
   display: flex;
   align-items: center;
-  font-family: 'Courier New', Courier, monospace; /* Change this to the desired font family */
+  font-family: "Roboto Mono", monospace, bold; /* Change this to the desired font family */
   font-size: 50px;
   color: red; 
 }

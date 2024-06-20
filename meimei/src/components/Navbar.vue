@@ -15,11 +15,11 @@
       return {
         activeItem: '',
         menuItems: [
-          { name: 'Početna', link: '/' },
-          { name: 'Galerija', link: '/gallery' },
-          { name: 'Meni', link: '/menu' },
-          { name: 'Moj profil', link: '/account' },
-          { name: 'O nama', link: '/about' }
+          { name: 'početna', link: '/' },
+          { name: 'galerija', link: '/gallery' },
+          { name: 'meni', link: '/menu' },
+          { name: 'moj profil', link: '/account' },
+          { name: 'o nama', link: '/about' }
         ]
       }
     },
