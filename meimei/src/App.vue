@@ -2,10 +2,7 @@
   <div id="app">
     <Header_vue />
     <Navbar_vue />
-    <div class="main-content">
-      <ProductList />
-      <Cart_vue />
-    </div>
+    <router-view />
     <Footer_vue />
   </div>
 </template>
@@ -13,8 +10,6 @@
 <script>
 import Header_vue from './components/Header.vue'
 import Navbar_vue from './components/Navbar.vue'
-import ProductList from './components/ProductList.vue'
-import Cart_vue from './components/Cart.vue'
 import Footer_vue from './components/Footer.vue'
 
 export default {
@@ -22,8 +17,6 @@ export default {
   components: {
     Header_vue,
     Navbar_vue,
-    ProductList,
-    Cart_vue,
     Footer_vue
   }
 }
@@ -45,14 +38,6 @@ body {
 #app {
   display: flex;
   flex-direction: column;
-  flex: 1;
-}
-
-.main-content {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: rgb(249, 213, 219);
   flex: 1;
 }
 

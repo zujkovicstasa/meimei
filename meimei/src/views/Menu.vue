@@ -1,6 +1,6 @@
 <template>
     <div class="menu">
-      <h1>Menu</h1>
+      <h1>Meni</h1>
       <!--<DishList group="Предјела" />
       <DishList group="Главна јела" />
       <DishList group="Дезерт" />-->

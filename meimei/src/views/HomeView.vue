@@ -1,5 +1,28 @@
 <template>
   <div class="home">
-    <h1>This is a home page</h1>
+    <ProductList />
+    <Cart />
   </div>
 </template>
+
+<script>
+import ProductList from '../components/ProductList.vue'
+import Cart from '../components/Cart.vue'
+
+export default {
+  name: 'Home_vue',
+  components: {
+    ProductList,
+    Cart
+  }
+}
+</script>
+
+<style scoped>
+.home {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: rgb(249, 213, 219);
+}
+</style>
