@@ -1,6 +1,6 @@
 <template>
     <div class="my-account">
-      <h1>Мој налог</h1>
+      <h1>Moj nalog</h1>
       <Cart />
       <OrderHistory />
     </div>
