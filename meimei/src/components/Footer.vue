@@ -20,6 +20,8 @@
     width:100%;
     background-color: rgb(249, 213, 219);
     border-top: 2px solid red;
+    margin-top: auto; /* Push the footer to the bottom */
+    width: 100%;
   }
   .site-footer p{
     font-size:15px;

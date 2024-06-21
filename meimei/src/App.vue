@@ -2,7 +2,7 @@
   <div id="app">
     <Header_vue />
     <Navbar_vue />
-    <router-view />
+    <router-view class="main-content" />
     <Footer_vue />
   </div>
 </template>
@@ -32,7 +32,7 @@ body {
   color: #333;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh; /* Ensure the body covers the full viewport height */
 }
 
 #app {
@@ -41,11 +41,9 @@ body {
   flex: 1;
 }
 
-
-
-footer {
-  background-color: rgb(249, 213, 219);
-  text-align: center;
-  padding: 20px;
+.main-content {
+  flex: 1; /* Fill remaining vertical space */
 }
+
+
 </style>
