@@ -23,6 +23,7 @@
         <div class="products">
           <div v-for="dish in sortedDishes" :key="dish.id" class="dish-item" >
             <img :src="dish.image" :alt="dish.name" />
+            <br>
             <h4>{{ dish.name }}</h4>
             <p>Price: €{{ dish.priceSmall.toFixed(2) }}</p>
             <button @click="showDetails(dish)">Show more</button>
