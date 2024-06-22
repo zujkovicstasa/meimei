@@ -4,7 +4,7 @@
       <router-view :dishes="groups" @show-details="showDetails"></router-view>
       
       <!--<ProductList v-if="currentGroup" :dishes="groups[currentGroup]" @show-details="showddetails" /> -->
-      <ProductItem v-if="selectedDish" :dish="selectedDish" @close="selectedDish = null; currentGroup='predjelo'" />
+      <ProductItem v-if="selectedDish" :dish="selectedDish" @close="backTomenu" />
     </div>
 </template>
   
@@ -148,14 +148,13 @@
         }
       };
     },
-    watch: {
-      $route(to, from) {
-        // Reset selectedDish when navigating back to a category route
-        if (from.params.id && !to.params.id) {
-          this.selectedDish = null;
-        }
-      }
-    },
+    // watch: {
+    //   $route(to, from) {
+    //     if (from.params.id && !to.params.id) {
+    //       this.selectedDish = null;
+    //     }
+    //   }
+    // },
     methods: {
       showDetails(dish) {
       this.selectedDish = dish;
@@ -168,6 +167,11 @@
           }
         }
         return '';
+      },
+      backTomenu(){
+        let cat = this.getCategory(this.selectedDish);
+        this.selectedDish=null;
+        this.$router.push(`/menu/${cat}`);
       }
     }
   };

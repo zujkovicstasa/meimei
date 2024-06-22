@@ -4,12 +4,23 @@
       <img :src="dish.image" :alt="dish.name" />
       <h3>{{ dish.name }}</h3>
       <p>{{ dish.description }}</p>
-      <input type="radio" name="size" value="small" class="radio">
       <p>Small: €{{ dish.priceSmall }}</p>
-      <input type="radio" name="size" value="large" class="radio">
       <p>Large: €{{ dish.priceLarge }}</p>
-      <button @click="addToCart">Add to cart</button>
-      <button @click="$emit('close')">Back to menu</button>
+      <button @click="showAddToCartForm" v-if="!showForm">Add to Cart</button>
+      <div v-show="showForm">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" v-model="quantity" min="1" required>
+        <br>
+        <label for="portionSize">Portion Size:</label>
+        <select id="portionSize" v-model="portionSize" @change="updatePrice">
+          <option value="small">Small</option>
+          <option value="large">Large</option>
+        </select>
+        <br>
+        <button @click="addToCart">Add to Cart</button>
+        <button @click="$emit('close')">Back to menu</button>
+      </div>
+      <button @click="$emit('close')" v-if="!showForm">Back to menu</button>
   </div>
 
     
@@ -22,16 +33,55 @@
     props: {
       dish: Object
     },
+    data() {
+      return {
+        showForm: false,
+        quantity: 1,
+        portionSize: 'small',
+        priceSmall: this.dish.priceSmall,
+        priceLarge: this.dish.priceLarge,
+        displayPrice: this.dish.priceSmall
+      };
+    },
     computed:{
       specificDish(){
         return this.dish[this.category][this.id] || null;
       }
     },
     methods: {
-
-      addToCart(){
-
-      }
+      showAddToCartForm() {
+        this.showForm = true;
+      },
+       updatePrice() {
+        switch (this.portionSize) {
+          case 'small':
+            this.displayPrice = this.dish.priceSmall;
+            break;
+          case 'large':
+            this.displayPrice = this.dish.priceLarge;
+            break;
+          default:
+            this.displayPrice = this.dish.priceSmall;
+        }
+      },
+      addToCart() {
+        const item = {
+          id: this.dish.id,
+          name: this.dish.name,
+          quantity: this.quantity,
+          portionSize: this.portionSize,
+          price: this.displayPrice
+        };
+        
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        cartItems.push(item);
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        this.quantity = 1;
+        this.portionSize = 'small';
+        this.displayPrice = this.dish.priceSmall;
+        this.showForm = false;
+        
+      },
     }
 };
 </script>
