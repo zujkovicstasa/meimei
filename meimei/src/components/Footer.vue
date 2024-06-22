@@ -15,7 +15,7 @@
     text-align: center;
     padding-top: 10px;
     padding-bottom: 1px;
-    position:absolute;
+    position:fixed;
     bottom:0;
     width:100%;
     background-color: rgb(249, 213, 219);
