@@ -1,41 +1,49 @@
 <template>
-    <div class="product-item">
-      <img :src="product.image" :alt="product.name" />
-      <h3>{{ product.name }}</h3>
-      <p>{{ product.description }}</p>
-      <p>€{{ product.price.toFixed(2) }}</p>
-      <button @click="addToCart">Dodaj</button>
-    </div>
-  </template>
+<div class="okolo">
+  <div v-if="dish" class="dish-details">
+      <img :src="dish.image" :alt="dish.name" />
+      <h3>{{ dish.name }}</h3>
+      <p>{{ dish.description }}</p>
+      <input type="radio" name="size" value="small" class="radio">
+      <p>Small: €{{ dish.priceSmall.toFixed(2) }}</p>
+      <input type="radio" name="size" value="large" class="radio">
+      <p>Large: €{{ dish.priceLarge.toFixed(2) }}</p>
+      <button @click="addToCart">Add to cart</button>
+      <button @click="$emit('close')">Back to menu</button>
+  </div>
+
+    
+</div>
+    
+</template>
   
-  <script>
+<script>
   export default {
-    name: 'ProductItem',
     props: {
-      product: Object
+      dish: Object
     },
     methods: {
-      addToCart() {
-        this.$emit('add-to-cart', this.product)
+      addToCart(){
+
       }
     }
+};
+</script>
+  
+<style scoped>
+  .okolo{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
   }
-  </script>
-  
-  <style scoped>
-  
-  .product-item {
-    
+  .dish-details {
     padding: 20px;
     text-align: center;
     background-color: rgb(249, 213, 219);
-    width: 350px;
-    height: 400px;
     font-family: "Roboto Mono", monospace;
-    border: 1px solid red;
   }
   
-  .product-item img {
+  .dish-details img {
     width: 150px;
     height: auto;
   }
@@ -44,7 +52,6 @@
     padding-top: 20px;
     color: red;
   }
-  
   button {
     background-color: red;
     color: white;
@@ -58,5 +65,20 @@
   button:hover {
     background-color: #ff4d4d;
   }
-  </style>
+  input[type="radio"]{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ff4d4d;
+    accent-color: rgb(249, 213, 219);
+    outline: none;
+    cursor: pointer;
+  }
+  input[type="radio"]:checked{
+    accent-color: #ff4d4d;
+
+  }
+  
+  
+</style>
   
