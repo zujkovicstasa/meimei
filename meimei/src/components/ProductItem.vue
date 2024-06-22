@@ -78,7 +78,13 @@
         };
         
         let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        cartItems.push(item);
+        const foundItem = cartItems.find(itemm => itemm.id === item.id);
+        if(foundItem){
+          foundItem.quantity+=item.quantity;
+        }
+        else{
+          cartItems.push(item);
+        }
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
         this.quantity = 1;
         this.portionSize = 'small';

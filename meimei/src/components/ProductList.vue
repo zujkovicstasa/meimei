@@ -11,7 +11,7 @@
         <h3 v-else>Menu</h3>
         <div class="row" >
           <div class="col-12 col-md-6 levi">
-            <input type="text" placeholder="Search dishes" class="forma" v-model="searchTerm" />
+            <input type="text" placeholder="Search" class="forma" v-model="searchTerm" />
           </div>
             
           <div class="col-12 col-md-6 desni">
@@ -88,10 +88,6 @@
   }
   .desni{
     align-items: right;
-    align-content: right;
-    justify-content: right;
-    right: 0;
-    float: right;
     display: flex; justify-content: flex-end;
   }
   .products{
