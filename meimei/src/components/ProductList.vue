@@ -11,12 +11,12 @@
         <h3 v-else>Menu</h3>
         <div>
           <label>Sort by:</label>
-          <select v-model="sortBy">
+          <select v-model="sortBy" class="forma">
             <option value="name">Name</option>
             <option value="priceSmall">Price (Low to High)</option>
           </select>
           <div>
-            <input type="text" placeholder="Search dishes" v-model="searchTerm" />
+            <input type="text" placeholder="Search dishes" class="forma" v-model="searchTerm" />
           </div>
           
         </div>
@@ -76,7 +76,9 @@
 </script>
   
 <style scoped>
-
+  .product-list{
+    color: red;
+  }
   .products{
     display: flex;
     flex-wrap: wrap;
@@ -100,6 +102,19 @@
   
   button:hover {
     background-color: #ff4d4d;
+  }
+  .forma, .forma:active, .forma:focus {
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 2px;
+    color: red;
+    border: 2px solid red;
+    outline: 0;
+    caret-color: red;
+  }
+  .forma::placeholder {
+    color: red;
   }
   
   .dish-item {

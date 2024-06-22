@@ -102,6 +102,7 @@
     text-align: center;
     background-color: rgb(249, 213, 219);
     font-family: "Roboto Mono", monospace;
+    color: red;
   }
   
   .dish-details img {
@@ -121,11 +122,17 @@
     border-radius: 20px;
     cursor: pointer;
     font-style: bold;
+    margin: 2px;
   }
-  .forma {
+  .forma, .forma:active, .forma:focus {
     background-color: white;
     border-radius: 10px;
     cursor: pointer;
+    margin: 2px;
+    color: red;
+    border: 2px solid red;
+    outline: 0;
+    caret-color: red;
   }
   
   button:hover {
@@ -144,6 +151,12 @@
     accent-color: #ff4d4d;
 
   }
+  label{
+    color: #ff4d4d;
+    font-weight: bold;
+    padding: 5px;
+  }
+
   
   
 </style>
