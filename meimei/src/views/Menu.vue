@@ -1,34 +1,29 @@
 <template>
     <div class="menu">
-      <h1>Meni</h1>
-      <div>
-        <button @click="currentGroup = 'predjelo';selectedDish=null;">Appetizers</button>
-        <button @click="currentGroup = 'glavna';selectedDish=null;">Main Courses</button>
-        <button @click="currentGroup = 'dezerti';selectedDish=null;">Desserts</button>
-        <button @click="currentGroup = 'kokteli';selectedDish=null;">Cocktails</button>
-        <button @click="currentGroup = 'boba';selectedDish=null;">Bubble tea</button>
-      </div>
-      <ProductList v-if="currentGroup" :dishes="groups[currentGroup]" @show-details="showddetails" />
+      
+      <router-view :dishes="groups" @show-details="showDetails"></router-view>
+      
+      <!--<ProductList v-if="currentGroup" :dishes="groups[currentGroup]" @show-details="showddetails" /> -->
       <ProductItem v-if="selectedDish" :dish="selectedDish" @close="selectedDish = null; currentGroup='predjelo'" />
     </div>
 </template>
   
   <script>
- import ProductList from '../components/ProductList.vue'
+ //import ProductList from '../components/ProductList.vue'
  import ProductItem from '../components/ProductItem.vue'
 
   export default {
     name: 'Menu_view',
     components:{
-      ProductList,
+      //ProductList,
       ProductItem
     },
     data() {
       return {
-        currentGroup: 'predjelo',
+        //currentGroup: 'predjelo',
         selectedDish: null,
         groups: {
-          predjelo: [
+          predjela: [
             {
               id: 1, 
               name: 'Spring rolls',
@@ -97,10 +92,26 @@
         }
       };
     },
+    watch: {
+      $route(to, from) {
+        // Reset selectedDish when navigating back to a category route
+        if (from.params.id && !to.params.id) {
+          this.selectedDish = null;
+        }
+      }
+    },
     methods: {
-      showddetails(dish) {
-        this.selectedDish = dish;
-        this.currentGroup=null;
+      showDetails(dish) {
+      this.selectedDish = dish;
+      this.$router.push(`/menu/${this.getCategory(dish)}/${dish.id}`);
+      },
+      getCategory(dish) {
+        for (let category in this.groups) {
+          if (this.groups[category].some(item => item.id === dish.id)) {
+            return category;
+          }
+        }
+        return '';
       }
     }
   };

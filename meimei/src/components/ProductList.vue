@@ -2,7 +2,13 @@
   <div class="product-list">
       
     <div>
-        <h3>{{ currentGroup }}</h3>
+        
+        <h3 v-if="category === 'predjela'">Appetizers</h3>
+        <h3 v-else-if="category === 'glavna'">Main Courses</h3>
+        <h3 v-else-if="category === 'dezerti'">Desserts</h3>
+        <h3 v-else-if="category === 'kokteli'">Cocktails</h3>
+        <h3 v-else-if="category === 'boba'">Bubble Tea</h3>
+        <h3 v-else>Menu</h3>
         <div>
           <label>Sort by:</label>
           <select v-model="sortBy">
@@ -30,8 +36,9 @@
   
 <script>
   export default {
-  props: {
-    dishes: Array
+  props:{
+    category: String,
+    dishes: Object,
   },
   data() {
     return {
@@ -40,8 +47,11 @@
     };
   },
   computed: {
+    filteredDishes() {
+      return this.dishes[this.category] || [];
+    },
     sortedDishes() {
-      let sorted = [...this.dishes];
+      let sorted = [...this.filteredDishes];
       if (this.sortBy === 'name') {
         sorted.sort((a, b) => a.name.localeCompare(b.name));
       } else if (this.sortBy === 'priceSmall') {

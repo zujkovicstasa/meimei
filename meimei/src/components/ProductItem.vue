@@ -5,9 +5,9 @@
       <h3>{{ dish.name }}</h3>
       <p>{{ dish.description }}</p>
       <input type="radio" name="size" value="small" class="radio">
-      <p>Small: €{{ dish.priceSmall.toFixed(2) }}</p>
+      <p>Small: €{{ dish.priceSmall }}</p>
       <input type="radio" name="size" value="large" class="radio">
-      <p>Large: €{{ dish.priceLarge.toFixed(2) }}</p>
+      <p>Large: €{{ dish.priceLarge }}</p>
       <button @click="addToCart">Add to cart</button>
       <button @click="$emit('close')">Back to menu</button>
   </div>
@@ -22,7 +22,13 @@
     props: {
       dish: Object
     },
+    computed:{
+      specificDish(){
+        return this.dish[this.category][this.id] || null;
+      }
+    },
     methods: {
+
       addToCart(){
 
       }

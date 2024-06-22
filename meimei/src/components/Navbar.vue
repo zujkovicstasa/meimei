@@ -53,9 +53,10 @@ export default {
           name: 'Meni',
           subItems: [
             { name: 'Predjela', link: '/menu/predjela' },
-            { name: 'Glavna jela', link: '/menu/glavna-jela' },
+            { name: 'Glavna jela', link: '/menu/glavna' },
             { name: 'Dezerti', link: '/menu/dezerti' },
-            { name: 'Piće', link: '/menu/pice',}
+            { name: 'Kokteli', link: '/menu/kokteli',},
+            { name: 'Boba caj', link: '/menu/boba',}
           ]
         },
         { name: 'Galerija', link: '/gallery' },
