@@ -9,14 +9,17 @@
         <h3 v-else-if="category === 'kokteli'">Cocktails</h3>
         <h3 v-else-if="category === 'boba'">Bubble Tea</h3>
         <h3 v-else>Menu</h3>
-        <div>
-          <label>Sort by:</label>
-          <select v-model="sortBy" class="forma">
-            <option value="name">Name</option>
-            <option value="priceSmall">Price (Low to High)</option>
-          </select>
-          <div>
+        <div class="row" >
+          <div class="col-12 col-md-6 levi">
             <input type="text" placeholder="Search dishes" class="forma" v-model="searchTerm" />
+          </div>
+            
+          <div class="col-12 col-md-6 desni">
+            <label>Sort by:</label>
+            <select v-model="sortBy" class="forma">
+              <option value="name">Name</option>
+              <option value="priceSmall">Price (Low to High)</option>
+            </select>
           </div>
           
         </div>
@@ -79,6 +82,18 @@
   .product-list{
     color: red;
   }
+  .levi{
+    align-items: left;
+    display: flex; justify-content: flex-start;
+  }
+  .desni{
+    align-items: right;
+    align-content: right;
+    justify-content: right;
+    right: 0;
+    float: right;
+    display: flex; justify-content: flex-end;
+  }
   .products{
     display: flex;
     flex-wrap: wrap;
@@ -112,6 +127,11 @@
     border: 2px solid red;
     outline: 0;
     caret-color: red;
+    vertical-align: middle;
+    margin-bottom: 5px;
+  }
+  label{
+    line-height: 35px;
   }
   .forma::placeholder {
     color: red;
