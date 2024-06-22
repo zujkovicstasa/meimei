@@ -148,13 +148,13 @@
         }
       };
     },
-    // watch: {
-    //   $route(to, from) {
-    //     if (from.params.id && !to.params.id) {
-    //       this.selectedDish = null;
-    //     }
-    //   }
-    // },
+    watch: {
+      $route(to, from) {
+        if (from.params.id && !to.params.id) {
+          this.selectedDish = null;
+        }
+      }
+    },
     methods: {
       showDetails(dish) {
       this.selectedDish = dish;

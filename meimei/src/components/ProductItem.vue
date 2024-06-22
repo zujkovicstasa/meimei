@@ -6,19 +6,22 @@
       <p>{{ dish.description }}</p>
       <p>Small: €{{ dish.priceSmall }}</p>
       <p>Large: €{{ dish.priceLarge }}</p>
-      <button @click="showAddToCartForm" v-if="!showForm">Add to Cart</button>
+      <button @click="showAddToCartForm" v-if="!showForm && !showMessage" >Add to Cart</button>
       <div v-show="showForm">
         <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" v-model="quantity" min="1" required>
+        <input type="number" id="quantity" class="forma" v-model="quantity" min="1" required>
         <br>
         <label for="portionSize">Portion Size:</label>
-        <select id="portionSize" v-model="portionSize" @change="updatePrice">
+        <select id="portionSize" class="forma" v-model="portionSize" @change="updatePrice">
           <option value="small">Small</option>
           <option value="large">Large</option>
         </select>
         <br>
         <button @click="addToCart">Add to Cart</button>
         <button @click="$emit('close')">Back to menu</button>
+      </div>
+      <div v-show="showMessage">
+        Your order has been added to cart.
       </div>
       <button @click="$emit('close')" v-if="!showForm">Back to menu</button>
   </div>
@@ -36,6 +39,7 @@
     data() {
       return {
         showForm: false,
+        showMessage: false,
         quantity: 1,
         portionSize: 'small',
         priceSmall: this.dish.priceSmall,
@@ -80,6 +84,7 @@
         this.portionSize = 'small';
         this.displayPrice = this.dish.priceSmall;
         this.showForm = false;
+        this.showMessage = true;
         
       },
     }
@@ -116,6 +121,11 @@
     border-radius: 20px;
     cursor: pointer;
     font-style: bold;
+  }
+  .forma {
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
   }
   
   button:hover {
