@@ -1,4 +1,5 @@
 <template>
+  <div>
     <div class="cart">
       <h2>CART</h2>
       <div v-if="cartItems.length === 0 && !showMessage">Vaša korpa je prazna...</div>
@@ -16,6 +17,23 @@
       </div>
       <div v-if="showMessage">Your order has been sent. Thank you!</div>
     </div>
+    <div class="cart orders">
+      <h2>ORDERS</h2>
+      <div v-if="orderItems.length === 0">Niste jos nista narucili...</div>
+      <div v-else>
+        <div v-for="item in orderItems" :key="item.id" class="cart-item">
+          {{ item.id }}
+          <div v-for="car in item.list" :key="car.id" class="row">
+            <div class="col-12 col-md-6 levi">{{ car.name }} - €{{ car.price }}</div>
+            <div class="col-12 col-md-6 desni">{{ car.quantity }} </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+    
 </template>
   
 <script>
@@ -24,6 +42,7 @@ export default {
   data() {
     return {
       cartItems: [],
+      orderItems: [],
       showMessage: false
     };
   },
@@ -33,14 +52,21 @@ export default {
     }
   },
   methods: {
-    checkout() {
+    checkout(){
+      this.orderItems.push({
+        id: this.orderItems.reduce((max, item) => (item.id > max ? item.id : max), 0)+1,
+        list: this.cartItems
+      });
       this.cartItems = [];
       localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
+      localStorage.setItem('orderItems', JSON.stringify(this.orderItems));
       this.showMessage=true;
     },
     fetchCartItems() {
       const storedCartItems = JSON.parse(localStorage.getItem('cartItems'));
       this.cartItems = storedCartItems || []; 
+      const storedOrderItems = JSON.parse(localStorage.getItem('orderItems'));
+      this.orderItems = storedOrderItems || []; 
       if(this.cartItems)this.showMessage=false;
     },
     incrementQuantity(itemId, br) {
