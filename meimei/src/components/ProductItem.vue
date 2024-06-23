@@ -3,7 +3,7 @@
   <div v-if="dish" class="dish-details">
       <img :src="dish.image" :alt="dish.name" />
       <h3>{{ dish.name }}</h3>
-      <p>{{ dish.description }}</p>
+      <p class="sredina">{{ dish.description }}</p>
       <p>Small: €{{ dish.priceSmall }}</p>
       <p>Large: €{{ dish.priceLarge }}</p>
       <button @click="showAddToCartForm" v-if="!showForm && !showMessage" >Add to Cart</button>
@@ -161,6 +161,12 @@
     color: #ff4d4d;
     font-weight: bold;
     padding: 5px;
+  }
+  .sredina{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    
   }
 
   
