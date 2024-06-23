@@ -6,7 +6,14 @@
       <p class="sredina">{{ dish.description }}</p>
       <p>Small: €{{ dish.priceSmall }}</p>
       <p>Large: €{{ dish.priceLarge }}</p>
-      <button @click="showAddToCartForm" v-if="!showForm && !showMessage" >Add to Cart</button>
+      <div v-show="!showRate" class="card1" ref="starElems">
+        <p class="ital">Our customers rated this product:</p>
+        <span v-for="(star, index) in stars" 
+          :key="index" 
+          class="star1">★</span>
+          <br>
+      </div>
+      <button @click="showAddToCartForm" v-if="!showForm && !showMessage && !showRate">Add to Cart</button>
       <div v-show="showForm">
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity" class="forma" v-model="quantity" min="1" required>
@@ -18,12 +25,25 @@
         </select>
         <br>
         <button @click="addToCart">Add to Cart</button>
+        <button @click="rateUs">Rate</button>
         <button @click="$emit('close')">Back to menu</button>
+      </div>
+      <div v-show="showRate" ref="starElements" class="card">
+        <span v-for="(star, index) in stars" 
+          :key="index+1" 
+          class="star" 
+          @click="setRating(index+1)">★</span>
+          <br>
+          <p class="ital">Click on a wanted star to set rate.</p>
+          <button @click="showAddToCartForm">Add to Cart</button>
+          <button @click="ratingUs">Rate</button>
+          <button @click="$emit('close')">Back to menu</button>
       </div>
       <div v-show="showMessage">
         Your order has been added to cart.
       </div>
-      <button @click="$emit('close')" v-if="!showForm">Back to menu</button>
+      <button @click="rateUs" v-if="!showForm && !showRate">Rate</button>
+      <button @click="$emit('close')" v-if="!showForm && !showRate">Back to menu</button>
   </div>
 
     
@@ -33,6 +53,7 @@
   
 <script>
   export default {
+    
     props: {
       dish: Object
     },
@@ -40,11 +61,14 @@
       return {
         showForm: false,
         showMessage: false,
+        showRate: false,
         quantity: 1,
         portionSize: 'small',
         priceSmall: this.dish.priceSmall,
         priceLarge: this.dish.priceLarge,
-        displayPrice: this.dish.priceSmall
+        displayPrice: this.dish.priceSmall,
+        stars: Array(5).fill(false),
+        rating: 5,
       };
     },
     computed:{
@@ -53,8 +77,20 @@
       }
     },
     methods: {
+      setRating(ind) {
+        this.rating = ind;
+        const starElements = this.$refs.starElements.querySelectorAll('.star');
+        for(let i=0;i<starElements.length;i++){
+          if(i+1>this.rating)starElements[i].classList.add('gray');
+          else{
+            starElements[i].classList.remove('gray');
+          }
+        }
+      },
       showAddToCartForm() {
         this.showForm = true;
+        this.showMessage=false;
+        this.showRate=false;
       },
        updatePrice() {
         switch (this.portionSize) {
@@ -91,8 +127,75 @@
         this.displayPrice = this.dish.priceSmall;
         this.showForm = false;
         this.showMessage = true;
+        this.showRate=false;
         
       },
+      rateUs(){
+        this.showRate =true;
+        this.showForm=false;
+        this.showMessage=false;
+      },
+      updateStar(){
+        let storedRating = JSON.parse(localStorage.getItem('rating')) || [];
+        const foundItem = storedRating.find(itemm => itemm.id === this.dish.id);
+          if(foundItem){
+            this.rating=Math.floor(foundItem.rate/foundItem.num);
+          }
+          else this.rating = 5;
+        const starElems = this.$refs.starElems.querySelectorAll('.star1');
+        for (let i = 0; i < starElems.length; i++) {
+          if (i+1 > this.rating) {
+            starElems[i].classList.add('gray');
+          } else {
+            starElems[i].classList.remove('gray');
+          }
+        }
+        const starElements = this.$refs.starElements.querySelectorAll('.star');
+        for(let i=0;i<starElements.length;i++){
+          if(i+1>this.rating)starElements[i].classList.add('gray');
+          else{
+            starElements[i].classList.remove('gray');
+          }
+        }
+      },
+      
+      ratingUs(){
+        const rate = {
+          id: this.dish.id,
+          rate: this.rating,
+          num: 1,
+        };
+        
+        let storedRating = JSON.parse(localStorage.getItem('rating')) || [];
+        const foundItem = storedRating.find(itemm => itemm.id === rate.id);
+        if(foundItem){
+          foundItem.num++;
+          foundItem.rate += this.rating;
+        }
+        else{
+          storedRating.push(rate);
+        }
+        localStorage.setItem('rating', JSON.stringify(storedRating));
+        this.showRate=false;
+        this.updateStar();
+      },
+      
+    },
+    mounted() {
+        let storedRating = JSON.parse(localStorage.getItem('rating')) || [];
+        const foundItem = storedRating.find(itemm => itemm.id === this.dish.id);
+          if(foundItem){
+            this.rating=Math.floor(foundItem.rate/foundItem.num);
+          }
+          else this.rating = 5;
+        const starElems = this.$refs.starElems.querySelectorAll('.star1');
+        for (let i = 0; i < starElems.length; i++) {
+          if (i+1 > this.rating) {
+            starElems[i].classList.add('gray');
+          } else {
+            starElems[i].classList.remove('gray');
+          }
+        }
     }
 };
 </script>
@@ -115,7 +218,35 @@
     width: 150px;
     height: auto;
   }
+  .card {
+    display: inline;
+    background-color: rgb(249, 213, 219);
+    outline: 0;
+    border: 0;
+  }
+  .card1 {
+    display: inline;
+    background-color: rgb(249, 213, 219);
+    outline: 0;
+    border: 0;
+  }
   
+  .star {
+    font-size: 2rem;
+    color: rgb(236, 193, 85);
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  .star1 {
+    font-size: 2rem;
+    color: rgb(236, 193, 85);
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  .gray{
+    color: rgb(234, 226, 226);
+  }
+    
   h3 {
     padding-top: 20px;
     color: red;
@@ -156,6 +287,11 @@
   input[type="radio"]:checked{
     accent-color: #ff4d4d;
 
+  }
+  .ital{
+    font-style: italic;
+    color: red;
+    font-family: cursive;
   }
   label{
     color: #ff4d4d;
