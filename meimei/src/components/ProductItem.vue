@@ -93,6 +93,7 @@
           if(i+1>this.rating)starElements[i].classList.add('gray');
           else{
             starElements[i].classList.remove('gray');
+            starElements[i].classList.add('gold');
           }
         }
       },
@@ -164,6 +165,7 @@
           if(i+1>this.rating)starElements[i].classList.add('gray');
           else{
             starElements[i].classList.remove('gray');
+            starElements[i].classList.add('gold');
           }
         }
       },
@@ -244,6 +246,7 @@
   .star {
     font-size: 2rem;
     color: rgb(236, 193, 85);
+    color: lightgray;
     margin-right: 5px;
     cursor: pointer;
   }
@@ -255,6 +258,9 @@
   }
   .gray{
     color: whitesmoke;
+  }
+  .gold{
+    color: rgb(236, 193, 85);
   }
     
   h3 {

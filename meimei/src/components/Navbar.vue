@@ -184,6 +184,11 @@ export default {
   left: 100%;
   top: 0;
 }
+a.router-link-exact-active{
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
  .breadcrumb-container {
   display: flex;
   align-items: center;

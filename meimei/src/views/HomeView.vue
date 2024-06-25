@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-     <h2>Top 3 Customers' Favorites</h2>
+     <h2>Customers' Favorites</h2>
      <div class="card-container">
       <div class="levi"><img src="/Hrana/zmaj.png" alt="" class="zmaj"></div>
         <div class="card" v-for="dish in topRatedDishes" :key="dish.id">

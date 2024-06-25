@@ -27,7 +27,7 @@
           <div v-for="car in item.list" :key="car.id" class="row">
             <div class="col-12 col-md-6 levi">{{ car.name }} - {{ car.quantity }}</div>
           </div>
-          Total price: {{ item.total }}
+          Total price: {{ item.total.toFixed(2) }}
           
         </div>
       </div>
