@@ -1,44 +1,61 @@
 <template>
-  <nav class="navbar">
-    <ul>
-      <li 
-        v-for="item in menuItems" 
-        :key="item.name" 
-        @mouseover="setActiveItem(item.name)" 
-        @mouseleave="setActiveItem('')"
-      >
-        <router-link 
-          v-if="!item.subItems" 
-          :to="item.link" 
-          :class="{ active: activeItem === item.name }"
+  
+    <nav class="navbar">
+      <ul>
+        <li 
+          v-for="item in menuItems" 
+          :key="item.name" 
+          @mouseover="setActiveItem(item.name)" 
+          @mouseleave="setActiveItem('')"
         >
-          {{ item.name }}
-        </router-link>
-        <div v-else class="dropdown">
-          <span :class="{ active: activeItem === item.name }">{{ item.name }}</span>
-          <ul class="dropdown-menu" v-if="activeItem === item.name">
-            <li v-for="subItem in item.subItems" :key="subItem.name">
-              <router-link 
-                v-if="!subItem.subItems" 
-                :to="subItem.link" 
-                :class="{ active: activeItem === subItem.name }"
-              >
-                {{ subItem.name }}
-              </router-link>
-              <div v-else class="dropdown">
-                <span>{{ subItem.name }}</span>
-                <ul class="dropdown-menu">
-                  <li v-for="subSubItem in subItem.subItems" :key="subSubItem.name">
-                    <router-link :to="subSubItem.link">{{ subSubItem.name }}</router-link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </nav>
+          <router-link 
+            v-if="!item.subItems" 
+            :to="item.link" 
+            :class="{ active: activeItem === item.name }"
+          >
+            {{ item.name }}
+          </router-link>
+          <div v-else class="dropdown">
+            <span :class="{ active: activeItem === item.name }">{{ item.name }}</span>
+            <ul class="dropdown-menu" v-if="activeItem === item.name">
+              <li v-for="subItem in item.subItems" :key="subItem.name">
+                <router-link 
+                  v-if="!subItem.subItems" 
+                  :to="subItem.link" 
+                  :class="{ active: activeItem === subItem.name }"
+                >
+                  {{ subItem.name }}
+                </router-link>
+                <div v-else class="dropdown">
+                  <span>{{ subItem.name }}</span>
+                  <ul class="dropdown-menu">
+                    <li v-for="subSubItem in subItem.subItems" :key="subSubItem.name">
+                      <router-link :to="subSubItem.link">{{ subSubItem.name }}</router-link>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+       
+      <div class="breadcrumb-container">
+        <ol class="breadcrumb">
+        <li
+          v-for="(breadcrumb, idx) in breadcrumbList"
+          :key="idx"
+          :class="{ 'breadcrumb-item': true, active: idx === breadcrumbList.length - 1 }">
+          <span v-if="idx === breadcrumbList.length - 1">{{ breadcrumb.name }}</span>
+          <a v-else href="#" @click.prevent="navigateTo(breadcrumb)">{{ breadcrumb.name }}</a>
+
+        </li>
+        </ol>
+      </div>
+  
+    </nav>
+
+  
 </template>
 
 <script>
@@ -47,6 +64,7 @@ export default {
   data() {
     return {
       activeItem: '',
+      breadcrumbList: [],
       menuItems: [
         { name: 'Početna', link: '/' },
         {
@@ -64,10 +82,15 @@ export default {
         { name: 'O nama', link: '/about' }
       ]
     }
-  },
+  },watch: { '$route' () { this.breadcrumbList = this.$route.meta.breadcrumb; } },
   methods: {
     setActiveItem(item) {
       this.activeItem = item;
+    },
+    navigateTo(breadcrumb) {
+      if (breadcrumb.link) {
+        this.$router.push({ path: `/${breadcrumb.link}` });
+      }
     }
   }
 }
@@ -80,6 +103,9 @@ export default {
   padding: 2px;
   padding-left:15px;
   border-bottom: 2px solid red;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
 }
 
 .navbar ul {
@@ -156,5 +182,63 @@ export default {
 .dropdown-menu .dropdown-menu {
   left: 100%;
   top: 0;
+}
+ .breadcrumb-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto; 
+}
+
+.breadcrumb {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  
+  color: red;
+  
+}
+.breadcrumb-item::before {
+  padding-top: 10px;
+  position: absolute;
+  top: 6;
+  margin-left: -12px;
+}
+
+
+.breadcrumb-item a {
+  color: red;
+  text-decoration: underline;
+}
+
+.breadcrumb-item a:hover {
+  color: red;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.breadcrumb-item a:focus {
+  color: red;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+.breadcrumb-item.active a {
+  color: red;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+.breadcrumb-item span {
+  color: red;
+  font-style: italic;
+  pointer-events: none;
 }
 </style>

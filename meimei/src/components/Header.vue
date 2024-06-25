@@ -2,7 +2,7 @@
   <header class="header">
     <div class="logo">
       <img src="../assets/logo-removebg.png" alt="Site logo">
-      <span>MEI MEI</span>
+      <span>MEIMEI</span>
     </div>
   </header>
 </template>

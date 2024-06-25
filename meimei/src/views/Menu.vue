@@ -47,7 +47,7 @@
                 name: 'BBQ Pork',
                 priceSmall: 6.80, 
                 priceLarge: 8.80,
-                description: 'Tender slices of Chinese barbecue pork (Char Siu), marinated and glazed with a savory-sweet sauce. Served over a bed of steamed jasmine rice, accompanied by fresh seasonal vegetables and a drizzle of our special house sauce.', 
+                description: 'Tender slices of Chinese barbecue pork (Char Siu), marinated and glazed with a savory-sweet sauce, served over a bed of jasmine rice, accompanied by fresh seasonal vegetables and a drizzle of our special house sauce.', 
                 image: '/Hrana/bbqpork.PNG' 
             },
             { 
@@ -158,7 +158,7 @@
     methods: {
       showDetails(dish) {
       this.selectedDish = dish;
-      this.$router.push(`/menu/${this.getCategory(dish)}/${dish.id}`);
+      this.$router.push(`/menu/${this.getCategory(dish)}/${dish.name}`);
       },
       getCategory(dish) {
         for (let category in this.groups) {

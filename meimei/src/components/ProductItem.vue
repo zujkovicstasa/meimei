@@ -244,7 +244,7 @@
     cursor: pointer;
   }
   .gray{
-    color: rgb(234, 226, 226);
+    color: whitesmoke;
   }
     
   h3 {
