@@ -59,6 +59,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'Navbar_vue',
   data() {
@@ -171,7 +172,7 @@ export default {
 }
 
 .dropdown-menu a:hover {
-  color: white;
+  font-style:bold;
   border-radius: 5px;
 }
 
