@@ -9,7 +9,7 @@
         <h3 v-else-if="category === 'kokteli'">Cocktails</h3>
         <h3 v-else-if="category === 'boba'">Bubble Tea</h3>
         <h3 v-else>Menu</h3>
-        <div class="row" >
+        <div class="row pretraga" >
           <div class="col-12 col-md-6 levi">
             <input type="text" placeholder="Search" class="forma" v-model="searchTerm" />
           </div>
@@ -98,7 +98,7 @@
     font-family: "Roboto Mono", monospace;
   }
   h3 {
-    padding-top: 20px;
+    padding-top: 10px;
     color: red;
   }
   button {
@@ -132,7 +132,10 @@
   .forma::placeholder {
     color: red;
   }
-  
+  .pretraga{
+    padding-top:5px;
+    padding-bottom: 30px;
+  }
   .dish-item {
     
     padding: 20px;
@@ -145,8 +148,9 @@
   }
   
   .dish-item img {
-    width: 150px;
-    height: auto;
+    width: auto;
+    height: 240px;
+    padding-bottom: 30px;
   }
   
 </style>
