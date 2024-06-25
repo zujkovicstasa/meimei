@@ -24,9 +24,9 @@
         <div v-for="item in orderItems" :key="item.id" class="cart-item">
           {{ item.id }}
           <div v-for="car in item.list" :key="car.id" class="row">
-            <div class="col-12 col-md-6 levi">{{ car.name }} - €{{ car.price }}</div>
-            <div class="col-12 col-md-6 desni">{{ car.quantity }} </div>
+            <div class="col-12 col-md-6 levi">{{ car.name }} - {{ car.quantity }}</div>
           </div>
+          Total price: {{ item.total }}
           
         </div>
       </div>
@@ -55,7 +55,8 @@ export default {
     checkout(){
       this.orderItems.push({
         id: this.orderItems.reduce((max, item) => (item.id > max ? item.id : max), 0)+1,
-        list: this.cartItems
+        list: this.cartItems,
+        total: this.totalPrice
       });
       this.cartItems = [];
       localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
