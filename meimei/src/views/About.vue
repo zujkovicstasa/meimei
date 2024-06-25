@@ -36,82 +36,43 @@
 
     <section class="reviews">
       <h1 class="title">OCENE GOSTIJU</h1>
-      <div class="swiper reviews-slider">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide slide">
-            <img src="../assets/images/pic-1.png" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo exercitationem ullam esse quia iusto in.</p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <h3>john deo</h3>
+      <div class="reviews-container">
+        <div class="review">
+          <img src="../assets/images/pic-1.png" alt="">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo exercitationem ullam esse quia iusto in.</p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
           </div>
-          <div class="swiper-slide slide">
-            <img src="../assets/images/pic-2.png" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo exercitationem ullam esse quia iusto in.</p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <h3>john deo</h3>
-          </div>
-          <div class="swiper-slide slide">
-            <img src="../assets/images/pic-3.png" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo exercitationem ullam esse quia iusto in.</p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <h3>john deo</h3>
-          </div>
-          <div class="swiper-slide slide">
-            <img src="../assets/images/pic-4.png" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo exercitationem ullam esse quia iusto in.</p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <h3>john deo</h3>
-          </div>
-          <div class="swiper-slide slide">
-            <img src="../assets/images/pic-5.png" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo exercitationem ullam esse quia iusto in.</p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <h3>john deo</h3>
-          </div>
-          <div class="swiper-slide slide">
-            <img src="../assets/images/pic-6.png" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo exercitationem ullam esse quia iusto in.</p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <h3>john deo</h3>
-          </div>
+          <h3>john deo</h3>
         </div>
-        <div class="swiper-pagination"></div>
+        <div class="review">
+          <img src="../assets/images/pic-2.png" alt="">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo exercitationem ullam esse quia iusto in.</p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <h3>john deo</h3>
+        </div>
+        <div class="review">
+          <img src="../assets/images/pic-3.png" alt="">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo exercitationem ullam esse quia iusto in.</p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>john deo</h3>
+        </div>
       </div>
     </section>
 
@@ -152,7 +113,6 @@ export default {
   // },
 };
 </script>
-
 <style scoped>
 .about {
   padding-left: 200px;
@@ -172,16 +132,17 @@ export default {
 }
 
 .about .row .image {
-  flex: 18%;
+  flex: 1 1 40%;
 }
 
 .about .row .image img {
-  
+  width: auto;
   height: 600px;
+  object-fit: cover;
 }
 
 .about .row .content {
-  flex: 1 1 40rem;
+  flex: 1 1 50%;
   text-align: center;
 }
 
@@ -264,15 +225,21 @@ export default {
   margin-top: 50px;
 }
 
-.reviews .slide {
-  margin-bottom: 4rem;
+.reviews .reviews-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reviews .review {
+  flex: 1 1 30%;
+  margin: 0 1rem;
   border: 2px solid red; /* Border around each review */
   text-align: center;
   padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.reviews .slide img {
+.reviews .review img {
   height: 10rem;
   width: 10rem;
   border-radius: 50%;
@@ -280,25 +247,25 @@ export default {
   object-fit: cover;
 }
 
-.reviews .slide p {
+.reviews .review p {
   padding: 1rem 0;
   line-height: 2;
   font-size: 1.6rem;
   color: red;
 }
 
-.reviews .slide .stars {
+.reviews .review .stars {
   display: inline-block;
   padding: 0.5rem 1.5rem;
   border: red 0.2rem;
 }
 
-.reviews .slide .stars i {
+.reviews .review .stars i {
   font-size: 1rem;
   color: darkred;
 }
 
-.reviews .slide h3 {
+.reviews .review h3 {
   font-size: 2rem;
   color: red;
   text-transform: capitalize;

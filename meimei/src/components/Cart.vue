@@ -94,7 +94,7 @@ export default {
   
   <style scoped>
   .cart {
-    width: 50%;
+    width: 500px;
     padding: 20px;
     background-color: #ffe5e5;
     color: red;
