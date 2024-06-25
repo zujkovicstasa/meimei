@@ -26,6 +26,9 @@
         <br>
         <button @click="addToCart">Add to Cart</button>
         <button @click="rateUs">Rate</button>
+        <a href="/Hrana/menu.pdf" download="menu.pdf">
+          <button>Download our menu</button>
+        </a>
         <button @click="$emit('close')">Back to menu</button>
       </div>
       <div v-show="showRate" ref="starElements" class="card">
@@ -37,12 +40,18 @@
           <p class="ital">Click on a wanted star to set rate.</p>
           <button @click="showAddToCartForm">Add to Cart</button>
           <button @click="ratingUs">Rate</button>
+          <a href="/Hrana/menu.pdf" download="menu.pdf">
+            <button>Download our menu</button>
+          </a>
           <button @click="$emit('close')">Back to menu</button>
       </div>
       <div v-show="showMessage">
         Your order has been added to cart.
       </div>
       <button @click="rateUs" v-if="!showForm && !showRate">Rate</button>
+      <a href="/Hrana/menu.pdf" download="menu.pdf" v-if="!showForm && !showRate">
+        <button>Download our menu</button>
+      </a>
       <button @click="$emit('close')" v-if="!showForm && !showRate">Back to menu</button>
   </div>
 

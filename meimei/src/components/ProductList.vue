@@ -19,6 +19,7 @@
             <select v-model="sortBy" class="forma">
               <option value="name">Name</option>
               <option value="priceSmall">Price (Low to High)</option>
+              <option value="nameAndPrice">Name&Price</option>
             </select>
           </div>
           
@@ -60,11 +61,25 @@
         sorted.sort((a, b) => a.name.localeCompare(b.name));
       } else if (this.sortBy === 'priceSmall') {
         sorted.sort((a, b) => a.priceSmall - b.priceSmall);
+      }else if (this.sortBy === 'nameAndPrice') {
+          sorted.sort((a, b) => {
+            const nameComparison = a.name.localeCompare(b.name);
+            if (nameComparison !== 0) {
+              return nameComparison;
+            }
+            return a.priceSmall - b.priceSmall;
+          });
       }
       if (this.searchTerm) {
-        sorted = sorted.filter(dish =>
-          dish.name.toLowerCase().includes(this.searchTerm.toLowerCase())
-        );
+        if (!isNaN(this.searchTerm)) {
+          sorted = sorted.filter(dish =>
+            dish.priceSmall.toString().includes(this.searchTerm)
+          );
+        } else {
+          sorted = sorted.filter(dish =>
+            dish.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+          );
+        }
       }
       return sorted;
     }

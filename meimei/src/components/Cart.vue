@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <div class="sve">
+    <div class="box">
     <div class="cart">
       <h2>CART</h2>
-      <div v-if="cartItems.length === 0 && !showMessage">Vaša korpa je prazna...</div>
+      <div v-if="cartItems.length === 0 && !showMessage">Your cart is empty...</div>
       <div v-else-if="!showMessage">
         <div v-for="item in cartItems" :key="item.id" class="row cart-item">
           <div class="col-12 col-md-6 levi">{{ item.name }} - €{{ item.price }}</div>
@@ -19,7 +20,7 @@
     </div>
     <div class="cart orders">
       <h2>ORDERS</h2>
-      <div v-if="orderItems.length === 0">Niste jos nista narucili...</div>
+      <div v-if="orderItems.length === 0">You have not ordered yet...</div>
       <div v-else>
         <div v-for="item in orderItems" :key="item.id" class="cart-item">
           {{ item.id }}
@@ -31,6 +32,10 @@
         </div>
       </div>
       
+    </div>
+    </div>
+    <div class="box desno">
+      <img src="@/assets/images/about-img.jpg" alt="" class="imgd">
     </div>
   </div>
     
@@ -95,11 +100,17 @@ export default {
   
   <style scoped>
   .cart {
-    width: 500px;
     padding: 20px;
     background-color: #ffe5e5;
     color: red;
     font-family: "Roboto Mono", monospace;
+  }
+  .desno{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+
   }
   .levi{
     align-items: left;
@@ -109,6 +120,7 @@ export default {
     align-items: right;
     display: flex; justify-content: flex-end;
   }
+
   
   .cart-item {
     margin-bottom: 10px;
@@ -142,5 +154,21 @@ export default {
   button.plus:hover{
     color: white;
   }
+  .box {
+        float: left;
+        width: 50%;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+
+    .sve{
+      width: 100%;
+      overflow: hidden;
+    }
+    .imgd{
+      width: auto;
+      height: 800px;
+    }
+    
   </style>
   

@@ -67,20 +67,20 @@ export default {
       activeItem: '',
       breadcrumbList: [],
       menuItems: [
-        { name: 'Početna', link: '/' },
+        { name: 'Home', link: '/' },
         {
-          name: 'Meni',
+          name: 'Menu',
           subItems: [
-            { name: 'Predjela', link: '/menu/predjela' },
-            { name: 'Glavna jela', link: '/menu/glavna' },
-            { name: 'Dezerti', link: '/menu/dezerti' },
-            { name: 'Kokteli', link: '/menu/kokteli',},
-            { name: 'Boba caj', link: '/menu/boba',}
+            { name: 'Appetizers', link: '/menu/predjela' },
+            { name: 'Main courses', link: '/menu/glavna' },
+            { name: 'Desserts', link: '/menu/dezerti' },
+            { name: 'Cocktails', link: '/menu/kokteli',},
+            { name: 'Bubble tea', link: '/menu/boba',}
           ]
         },
-        { name: 'Galerija', link: '/gallery' },
-        { name: 'Moj profil', link: '/account' },
-        { name: 'O nama', link: '/about' }
+        { name: 'Gallery', link: '/gallery' },
+        { name: 'My account', link: '/account' },
+        { name: 'About us', link: '/about' }
       ]
     }
   },watch: { '$route' () { this.breadcrumbList = this.$route.meta.breadcrumb; } },
