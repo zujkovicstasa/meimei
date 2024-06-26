@@ -1,6 +1,6 @@
 <template>
 <div class="okolo">
-  <div v-if="dish" class="dish-details">
+  <div v-if="dish" class="dish-details" :class="{ 'dish-image': shouldApplyClass }">
       <img :src="dish.image" :alt="dish.name" />
       <h3>{{ dish.name }}</h3>
       <p class="sredina">{{ dish.description }}</p>
@@ -69,6 +69,7 @@
     data() {
       return {
         showForm: false,
+        shouldApplyClass: false,
         showMessage: false,
         showRate: false,
         quantity: 1,
@@ -77,7 +78,7 @@
         priceLarge: this.dish.priceLarge,
         displayPrice: this.dish.priceSmall,
         stars: Array(5).fill(false),
-        rating: 5,
+        rating: 0,
       };
     },
     computed:{
@@ -90,7 +91,11 @@
         this.rating = ind;
         const starElements = this.$refs.starElements.querySelectorAll('.star');
         for(let i=0;i<starElements.length;i++){
-          if(i+1>this.rating)starElements[i].classList.add('gray');
+          if(i+1>this.rating)
+          {
+            starElements[i].classList.remove('gold');
+            starElements[i].classList.add('gray');
+          }
           else{
             starElements[i].classList.remove('gray');
             starElements[i].classList.add('gold');
@@ -141,7 +146,9 @@
         
       },
       rateUs(){
+        this.rating=0;
         this.showRate =true;
+
         this.showForm=false;
         this.showMessage=false;
       },
@@ -151,7 +158,7 @@
           if(foundItem){
             this.rating=Math.floor(foundItem.rate/foundItem.num);
           }
-          else this.rating = 5;
+          else this.rating = 0;
         const starElems = this.$refs.starElems.querySelectorAll('.star1');
         for (let i = 0; i < starElems.length; i++) {
           if (i+1 > this.rating) {
@@ -162,11 +169,16 @@
         }
         const starElements = this.$refs.starElements.querySelectorAll('.star');
         for(let i=0;i<starElements.length;i++){
-          if(i+1>this.rating)starElements[i].classList.add('gray');
-          else{
-            starElements[i].classList.remove('gray');
-            starElements[i].classList.add('gold');
-          }
+          starElements[i].classList.remove('gold');
+          starElements[i].classList.remove('gray');
+          // if(i+1>this.rating){
+          // starElements[i].classList.add('gray');
+          // starElements[i].classList.remove('gold');
+          // }
+          // else{
+          //   starElements[i].classList.remove('gray');
+          //   starElements[i].classList.add('gold');
+          // }
         }
       },
       
@@ -190,15 +202,20 @@
         this.showRate=false;
         this.updateStar();
       },
+      updateClassBasedOnRoute() {
+        if(this.category === 'dezerti')this.shouldApplyClass = true; 
+        else this.shouldApplyClass=false;
+    },
       
     },
     mounted() {
+        this.updateClassBasedOnRoute();
         let storedRating = JSON.parse(localStorage.getItem('rating')) || [];
         const foundItem = storedRating.find(itemm => itemm.id === this.dish.id);
           if(foundItem){
             this.rating=Math.floor(foundItem.rate/foundItem.num);
           }
-          else this.rating = 5;
+          else this.rating = 0;
         const starElems = this.$refs.starElems.querySelectorAll('.star1');
         for (let i = 0; i < starElems.length; i++) {
           if (i+1 > this.rating) {
@@ -320,7 +337,10 @@
     text-align: center;
     
   }
-
+.dish-image img{
+  width: 300px;
+  height: auto;
+}
   
   
 </style>
