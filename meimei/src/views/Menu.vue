@@ -19,8 +19,12 @@
       <div v-show="!selectedDish" class="dwnld">
         <a href="/Hrana/menu.pdf" download="menu.pdf">
         <button>Download our menu</button>
+        
       </a>
       </div>
+      <div v-if="!showElement" class="menislika">
+          <img src="/Hrana/menislika.png" alt="" class="slika">
+        </div>
       
     </div>
 </template>
@@ -40,6 +44,7 @@
         //currentGroup: 'predjelo',
         selectedDish: null,
         activeItem: null,
+        category: null,
         groups: {
           predjela: [
             {
@@ -194,7 +199,7 @@
         if (from.params.id && !to.params.id) {
           this.selectedDish = null;
         }
-      }
+      },
     },
     methods: {
       showDetails(dish) {
@@ -204,6 +209,7 @@
       getCategory(dish) {
         for (let category in this.groups) {
           if (this.groups[category].some(item => item.id === dish.id)) {
+            this.category=category;
             return category;
           }
         }
@@ -223,7 +229,13 @@
           'active-image': this.activeItem === itemName,
         };
       },
+    },
+    computed: {
+    showElement() {
+      const currentPath = this.$route.path;
+      return currentPath !== '/menu';
     }
+  }
   };
 
 
@@ -266,6 +278,17 @@
     flex-wrap: wrap;
     align-content: space-between;
     justify-content: center;
+  }
+  .menislika{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .slika{
+    width: 65%;
+    height: auto;
   }
 
 

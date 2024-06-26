@@ -4,9 +4,10 @@
      <div class="card-container">
       <div class="levi"><img src="/Hrana/zmaj.png" alt="" class="zmaj"></div>
         <div class="card" v-for="dish in topRatedDishes" :key="dish.id">
-          <div class="dish-name">{{ dish.name }}</div>
-          <img :src="dish.image" alt="dish image" class="dish-image">
-          
+          <div class="dish-name">{{ dish.name }}</div> 
+          <router-link :to="{ name: 'Menu' }">
+            <img :src="dish.image" alt="dish image" class="dish-image">
+          </router-link>
           <div class="dish-rate">Customers rated: {{ (dish.rate / dish.num).toFixed(2) }}/5</div>
         </div>
         <div v-show="topRatedDishes.length === 0" class="gif"><img src="Hrana/giff.gif" alt="Animated GIF"></div>
@@ -24,6 +25,7 @@ export default {
       topRatedDishes: []
     };
   },methods: {
+
     getTopRatedDishes() {
       const storedRatings = JSON.parse(localStorage.getItem('rating')) || [];
       const allDishes = Object.values(dishes).flat();
@@ -34,7 +36,8 @@ export default {
 
       ratedDishes.sort((a, b) => (b.rate / b.num) - (a.rate / a.num));
       this.topRatedDishes = ratedDishes.slice(0, 3);
-    }
+      
+    },
   },
   mounted() {
     this.getTopRatedDishes();
