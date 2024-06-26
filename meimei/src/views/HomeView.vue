@@ -13,6 +13,15 @@
         <div v-show="topRatedDishes.length === 0" class="gif"><img src="Hrana/giff.gif" alt="Animated GIF"></div>
         <div  class="desni"><img src="/Hrana/zmaj2.png" alt="" class="zmaj"></div>
       </div>
+      <br><br>
+      <h2>Current Promotions</h2>
+      <div class="card-container">
+        <div v-for="pr in promo" class="card" :key="pr.id"> 
+          <div class="dish-name">{{ pr.name }}</div>
+          <img :src="pr.image" alt="dish image" class="dish-image">
+          <div class="dish-rate">Price reduced to: {{ pr.priceSmall.toFixed(2) }}</div>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -22,7 +31,8 @@ export default {
   name: 'Home_vue',
    data() {
     return {
-      topRatedDishes: []
+      topRatedDishes: [],
+      promo: []
     };
   },methods: {
 
@@ -38,9 +48,14 @@ export default {
       this.topRatedDishes = ratedDishes.slice(0, 3);
       
     },
+    getPromo(){
+      const idsToFilter = [1,2,7];
+      this.promo = dishes.filter(dish => idsToFilter.includes(dish.id));
+    }
   },
   mounted() {
     this.getTopRatedDishes();
+    this.getPromo();
   }
 };
 </script>

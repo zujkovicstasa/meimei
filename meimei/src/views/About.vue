@@ -19,7 +19,7 @@
         <div class="box">
           <img src="@/assets/images/step-1.png" alt="Step 1">
           <h3>Choose your dish</h3>
-          <p>We offer a diverse menu crafted with care. Whether you're craving traditional flavors or exploring something new, our dishes are prepared with the freshest ingredients to satisfy your taste buds.</p>
+          <p>We offer a diverse menu, whether you're craving traditional flavors or exploring something new, our dishes are prepared with the freshest ingredients to satisfy your taste buds.</p>
         </div>
         <div class="box">
           <img src="@/assets/images/step-2.png" alt="Step 2">
@@ -41,11 +41,11 @@
           <img src="../assets/images/pic-1.png" alt="">
           <p>MEIMEI is a gem! The flavors in every dish are exceptional, truly transporting me to China with each bite. The staff's warm hospitality made our dining experience unforgettable. Can't wait to visit again!</p>
           <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star star-gold"></i>
+            <i class="fas fa-star star-gold"></i>
+            <i class="fas fa-star star-gold"></i>
+            <i class="fas fa-star star-gold"></i>
+            <i class="fas fa-star star-gold"></i>
           </div>
           <h3>Marko Marković</h3>
         </div>
@@ -53,11 +53,11 @@
           <img src="../assets/images/pic-2.png" alt="">
           <p>Absolutely loved my meal at MEIMEI! The Bao Buns were heavenly – soft, flavorful, and perfectly balanced with tender pork belly. A must-visit for anyone craving authentic Chinese cuisine in town.</p>
           <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
+            <i class="fas fa-star star-gold"></i>
+            <i class="fas fa-star star-gold"></i>
+            <i class="fas fa-star star-gold"></i>
+            <i class="fas fa-star star-gold"></i>
+            <i class="fas fa-star-half-alt star-gold"></i>
           </div>
           <h3>Milica Simić</h3>
         </div>
@@ -65,11 +65,11 @@
           <img src="../assets/images/pic-3.png" alt="">
           <p>What a delightful discovery! The Toffee Banana dessert was the perfect ending to a fantastic meal. Each dish showcased the chef's mastery in blending traditional flavors with modern twists. Highly recommend!</p>
           <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star star-gold"></i>
+            <i class="fas fa-star star-gold"></i>
+            <i class="fas fa-star star-gold"></i>
+            <i class="fas fa-star star-gold"></i>
+            <i class="fas fa-star star-gold"></i>
           </div>
           <h3>Petar Petrović</h3>
         </div>
@@ -151,7 +151,7 @@ export default {
 }
 
 .about .row .image img {
-  width: 700px;
+  width: 70%;
   height: auto;
   object-fit: cover;
   
@@ -204,7 +204,7 @@ export default {
 }
 
 .steps .box-container {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 1.5rem;
   align-items: flex-start;
@@ -225,14 +225,14 @@ export default {
 }
 
 .steps .box-container .box h3 {
-  font-size: 2rem;
+  font-size: 25px;
   color: red;
   margin: 1rem 0;
   text-transform: capitalize;
 }
 
 .steps .box-container .box p {
-  font-size: 1.6rem;
+  font-size: 14px;
   color: red;
   line-height: 2;
 }
@@ -266,7 +266,7 @@ export default {
 .reviews .review p {
   padding: 1rem 0;
   line-height: 2;
-  font-size: 1.6rem;
+  font-size: 14px;
   color: red;
 }
 
@@ -277,12 +277,12 @@ export default {
 }
 
 .reviews .review .stars i {
-  font-size: 1rem;
+  font-size: 12px;
   color: darkred;
 }
 
 .reviews .review h3 {
-  font-size: 2rem;
+  font-size: 23px;
   color: red;
   text-transform: capitalize;
   margin-top: 1.5rem;
@@ -305,4 +305,8 @@ export default {
   width: 100%;
   height: 100%;
 }
+.star-gold{
+  color: rgb(236, 193, 85);
+}
+
 </style>
