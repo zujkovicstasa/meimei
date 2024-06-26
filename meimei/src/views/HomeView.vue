@@ -97,11 +97,13 @@ export default {
   .zmaj{
     max-width: 300px;
     height: auto;
+
   }
   .levi{
     display: flex;
     justify-content: flex-start;
     padding-right: 30px;
+    
   }
   .desni{
     display: flex;
