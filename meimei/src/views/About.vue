@@ -8,7 +8,7 @@
         <div class="content">
           <h3>Why Choose Us?</h3>
           <p>Discover the essence of Chinese cuisine at MEIMEI. We use the finest ingredients to create authentic flavors that bring China to your table. Our friendly staff ensures every visit is met with warmth and efficiency. Explore a diverse menu offering traditional favorites and innovative dishes.</p>
-          <router-link to="/menu/glavna" class="btn">Our Menu</router-link>
+          <router-link to="/menu" class="btn">Our Menu</router-link>
         </div>
       </div>
     </section>
@@ -306,7 +306,7 @@ export default {
   height: 100%;
 }
 .star-gold{
-  color: rgb(236, 193, 85);
+  color: red;
 }
 
 </style>

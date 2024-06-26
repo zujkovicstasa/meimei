@@ -5,7 +5,9 @@
       
       <!--<ProductList v-if="currentGroup" :dishes="groups[currentGroup]" @show-details="showddetails" /> -->
       <ProductItem v-if="selectedDish" :dish="selectedDish" @close="backTomenu" />
-      
+      <div v-if="!showElement" class="menislika">
+          <img src="/Hrana/menislika.png" alt="" class="slika">
+        </div>
       <div v-show="!selectedDish" class="linkovi">
         <p v-for="item in menuItems" 
           :key="item.name" 
@@ -23,9 +25,7 @@
         
       </a>
       </div>
-      <div v-if="!showElement" class="menislika">
-          <img src="/Hrana/menislika.png" alt="" class="slika">
-        </div>
+      
       
     </div>
 </template>
@@ -286,9 +286,11 @@
     align-content: space-between;
     justify-content: center;
     margin-top: 30px;
+    margin-bottom: 20px;
+
   }
   .slika{
-    width: 65%;
+    width: 45%;
     height: auto;
   }
 

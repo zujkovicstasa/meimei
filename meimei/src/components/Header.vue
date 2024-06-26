@@ -5,12 +5,15 @@
       <span><router-link to="/" class="nesto">
       MEIMEI</router-link></span>
     </div>
-    
-    <div class="korpa box badge"  v-bind:value="this.itemCount"> <router-link to="/account"><img src="/cart.png" alt=""></router-link></div>
-    <div class="language-switcher">
+    <div class="box">
+      <div class="language-switcher">
       <div class="button" @click="$i18n.locale='EN'">EN</div>
       <div class="button" @click="$i18n.locale='RS'">RS</div>
+      </div>
+    <div class="korpa box badge"  v-bind:value="this.itemCount"> <router-link to="/account"><img src="/cart.png" alt=""></router-link></div>
+    
     </div>
+    
   </header>
 </template>
 
@@ -86,23 +89,23 @@ export default {
   margin-right: 10px;
 }
  .box {
-        float: left;
-        width: 50%;
-        box-sizing: border-box;
-        padding: 20px;
-    }
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 20px;
+  }
 
 .logo span {
   display: flex;
   align-items: center;
 }
 .korpa{
-    display: flex;
-    justify-content: flex-end;
-     height: auto;
-     position:absolute;
-     right: 0;
-    bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  height: auto;
+  position:absolute;
+  right: 0;
+  bottom: 0;
 }
 
 .korpa img{
@@ -137,6 +140,14 @@ export default {
     }
 .language-switcher {
   display: flex;
+  justify-content: flex-end;
+  height: auto;
+  position:absolute;
+  right:0;
+  bottom: 0;
+  display: flex;
+  padding-bottom:18px;
+  padding-right: 70px;
   align-items: center;
   margin-left: 10px; /* Adjust spacing between cart and language switcher */
 }
@@ -144,14 +155,12 @@ export default {
 .language-switcher .button {
   cursor: pointer;
   margin: 0 5px;
-  padding: 5px 10px;
-  background-color: #ff4d4d;
-  color: white;
-  border-radius: 5px;
+  padding: 5px;
+  color:red;
   font-family: "Roboto Mono", monospace;
 }
 
 .language-switcher .button:hover {
-  background-color: #ff2d2d;
+  color:white;
 }
 </style>

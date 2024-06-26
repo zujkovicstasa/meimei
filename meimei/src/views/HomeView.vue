@@ -81,14 +81,14 @@ export default {
   box-sizing: border-box;
   padding: 10px;
   margin: 10px;
-  border: 3px solid #ff4d4d;
-  color:#ff4d4d;
+  border: 1px solid red;
+  color:red;
   font-family: "Roboto Mono", monospace;
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
   justify-content: center;
-  border-radius: 8px;
+  
   text-align: center;
   background-color: rgb(249, 213, 219);
   max-width: 250px;
@@ -97,15 +97,18 @@ export default {
 .dish-image {
   display: block;
   margin: auto;
-  max-width: 100px;
-  height: auto;
+  width:auto;
+  height: 150px;
   border-radius: 4px;
+  margin-bottom: 20px;
 }
 
 .dish-name{
-  margin-top: 10px;
+  margin-top:5px;
   font-size: 20px;
   font-weight: bold;
+  margin-bottom: 30px;
+  height:50px;
 }
  h2 {
     padding-top: 10px;
