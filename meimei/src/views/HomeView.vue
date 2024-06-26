@@ -79,16 +79,16 @@ export default {
 
 .card {
   box-sizing: border-box;
-  padding: 10px;
   margin: 10px;
-  border: 1px solid red;
+  padding: 2rem;
+  border: 2px solid red;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color:red;
   font-family: "Roboto Mono", monospace;
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
   justify-content: center;
-  
   text-align: center;
   background-color: rgb(249, 213, 219);
   max-width: 250px;

@@ -9,7 +9,7 @@
         </div>
       </div>
     </div>
-
+    
     <!-- Gallery Videos -->
     <div class="gallery-section">
       
@@ -120,4 +120,5 @@ export default {
   width: 100%;
   height: 100%; /* Adjust as needed */
 }
+
 </style>

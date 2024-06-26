@@ -152,14 +152,14 @@
     padding-bottom: 30px;
   }
   .dish-item {
-    
-    padding: 20px;
     text-align: center;
     background-color: rgb(249, 213, 219);
     width: 350px;
     height: auto;
     font-family: "Roboto Mono", monospace;
-    border: 1px solid red;
+    padding: 2rem;
+    border: 2px solid red; /* Border around each step */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .dish-item img {
