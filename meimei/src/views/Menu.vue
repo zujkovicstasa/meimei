@@ -5,6 +5,7 @@
       
       <!--<ProductList v-if="currentGroup" :dishes="groups[currentGroup]" @show-details="showddetails" /> -->
       <ProductItem v-if="selectedDish" :dish="selectedDish" @close="backTomenu" />
+      
       <div v-show="!selectedDish" class="linkovi">
         <p v-for="item in menuItems" 
           :key="item.name" 

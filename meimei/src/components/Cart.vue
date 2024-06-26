@@ -13,7 +13,7 @@
             <button class="plus" @click="incrementQuantity(item.id,1)">-</button>
           </div>
         </div>
-        <p>Total: €{{ totalPrice.toFixed(2) }}</p>
+        <p>Total: €{{ totalPrice }}</p>
         <button @click="checkout">Checkout</button>
       </div>
       <div v-if="showMessage">Your order has been sent. Thank you!</div>
@@ -27,7 +27,7 @@
           <div v-for="car in item.list" :key="car.id" class="row">
             <div class="col-12 col-md-6 levi">{{ car.name }} - {{ car.quantity }}</div>
           </div>
-          Total price: {{ item.total.toFixed(2) }}
+          Total price: {{ item.total }}
           
         </div>
       </div>
@@ -48,12 +48,13 @@ export default {
     return {
       cartItems: [],
       orderItems: [],
-      showMessage: false
+      showMessage: false,
+      
     };
   },
   computed: {
     totalPrice() {
-      return this.cartItems.reduce((total, item) => total + item.price*item.quantity, 0);
+      return this.cartItems.reduce((total, item) => total + item.price*item.quantity, 0.0);
     }
   },
   methods: {

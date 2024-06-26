@@ -5,9 +5,11 @@
       <span><router-link to="/" class="nesto">
       MEIMEI</router-link></span>
     </div>
-    <div class="korpa box badge"  v-bind:value="this.itemCount"> <router-link to="/account"><img src="/cart.png" alt=""></router-link>
     
-      
+    <div class="korpa box badge"  v-bind:value="this.itemCount"> <router-link to="/account"><img src="/cart.png" alt=""></router-link></div>
+    <div class="language-switcher">
+      <div class="button" @click="$i18n.locale='EN'">EN</div>
+      <div class="button" @click="$i18n.locale='RS'">RS</div>
     </div>
   </header>
 </template>
@@ -133,4 +135,23 @@ export default {
         opacity:0.9;
         align-items: center;
     }
+.language-switcher {
+  display: flex;
+  align-items: center;
+  margin-left: 10px; /* Adjust spacing between cart and language switcher */
+}
+
+.language-switcher .button {
+  cursor: pointer;
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border-radius: 5px;
+  font-family: "Roboto Mono", monospace;
+}
+
+.language-switcher .button:hover {
+  background-color: #ff2d2d;
+}
 </style>
