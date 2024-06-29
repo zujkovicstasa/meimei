@@ -1,19 +1,23 @@
 <template>
   <header class="header">
-    <div class="logo box"> <router-link to="/">
-      <img src="../assets/logo-removebg.png" alt="Site logo"></router-link>
-      <span><router-link to="/" class="nesto">
-      MEIMEI</router-link></span>
+    <div class="logo box">
+      <router-link to="/">
+        <img src="../assets/logo-removebg.png" alt="Site logo">
+      </router-link>
+      <span>
+        <router-link to="/" class="nesto">MEIMEI</router-link>
+      </span>
     </div>
+
     <div class="box">
       <div class="language-switcher">
-      <div class="button" @click="$i18n.locale='EN'">EN</div>
-      <div class="button" @click="$i18n.locale='RS'">RS</div>
+        <div class="button" @click="changeLanguage('EN')" :class="{ active: $store.getters.currentLanguage === 'EN' }">EN</div>
+        <div class="button" @click="changeLanguage('RS')" :class="{ active: $store.getters.currentLanguage === 'RS' }">RS</div>
       </div>
-    <div class="korpa box badge"  v-bind:value="this.itemCount"> <router-link to="/account"><img src="/cart.png" alt=""></router-link></div>
+      <div class="korpa box badge"  v-bind:value="this.itemCount"> <router-link to="/account"><img src="/cart.png" alt=""></router-link></div>
+    
     
     </div>
-    
   </header>
 </template>
 
@@ -21,9 +25,13 @@
 export default {
   name: 'Header_vue',
   data() {
-    return{
-     itemCount: 0,
-     cart: []
+    return {
+      itemCount: 0
+    };
+  },
+  computed: {
+    itemsFromLocalStorage() {
+      return JSON.parse(localStorage.getItem('cartItems') || '[]');
     }
   },
   methods: {
@@ -41,29 +49,25 @@ export default {
     },
     updateItemCount() {
       this.itemCount = this.calculateItemCount();
+    },
+    changeLanguage(lang) {
+      this.$store.dispatch('updateLanguage', lang);
+      this.$i18n.locale = lang;
     }
-  },
-  computed: { 
-            itemsFromLocalStorage() { 
-                return JSON.parse(localStorage.getItem('cartItems') || '[]'); 
-            }
   },
   mounted() {
     this.updateItemCount();
   },
-   watch: { 
-            cart(){
-                this.updateItemCount();
-            }, 
-        },
-         created() { 
-            this.cart = this.itemsFromLocalStorage; 
-        }, 
-}
-
-
+  watch: {
+    cart() {
+      this.updateItemCount();
+    }
+  },
+  created() {
+    this.cart = this.itemsFromLocalStorage;
+  }
+};
 </script>
-
 <style scoped>
 .header {
   background-color: rgb(249, 213, 219);
@@ -160,7 +164,4 @@ export default {
   font-family: "Roboto Mono", monospace;
 }
 
-.language-switcher .button:hover {
-  color:white;
-}
 </style>

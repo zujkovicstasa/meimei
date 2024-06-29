@@ -1,19 +1,13 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
 import '@fortawesome/fontawesome-free/css/all.css';
 import '@fortawesome/fontawesome-free/js/all.js';
-import { createI18n } from 'vue-i18n'
-import EN from './locale/en.js'
-import SR from './locale/sr.js'
+import i18n from './i18n';
+import store from './store';
 
-const i18n = createI18n({
-    locale: 'EN',
-    fallbackLocale:'EN',
-    messages:{
-        EN:EN,
-        SR:SR,
-    }
-})
-
-createApp(App).use(router).use(i18n).mount('#app')
+const app = createApp(App);
+app.use(store);
+app.use(router);
+app.use(i18n);
+app.mount('#app');
