@@ -3,7 +3,7 @@ import { createStore } from 'vuex';
 
 export default createStore({
   state: {
-    language: localStorage.getItem('language') || 'EN' // Default language
+    language: localStorage.getItem('language') || 'en' // Default to 'en' if language not set
   },
   mutations: {
     setLanguage(state, lang) {

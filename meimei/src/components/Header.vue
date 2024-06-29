@@ -1,23 +1,20 @@
 <template>
+
   <header class="header">
-    <div class="logo box">
-      <router-link to="/">
-        <img src="../assets/logo-removebg.png" alt="Site logo">
-      </router-link>
-      <span>
-        <router-link to="/" class="nesto">MEIMEI</router-link>
-      </span>
+    <div class="logo box"> <router-link to="/">
+      <img src="../assets/logo-removebg.png" alt="Site logo"></router-link>
+      <span><router-link to="/" class="nesto">MEIMEI</router-link></span>
     </div>
 
-    <div class="box">
-      <div class="language-switcher">
-        <div class="button" @click="changeLanguage('EN')" :class="{ active: $store.getters.currentLanguage === 'EN' }">EN</div>
-        <div class="button" @click="changeLanguage('RS')" :class="{ active: $store.getters.currentLanguage === 'RS' }">RS</div>
-      </div>
-      <div class="korpa box badge"  v-bind:value="this.itemCount"> <router-link to="/account"><img src="/cart.png" alt=""></router-link></div>
+    
+     
+    <button @click="changeLanguage('en')">EN</button>
+    <button @click="changeLanguage('rs')">RS</button>
+
+    <div class="korpa box badge"  v-bind:value="this.itemCount"> <router-link to="/account"><img src="/cart.png" alt=""></router-link></div>
     
     
-    </div>
+    
   </header>
 </template>
 
@@ -25,13 +22,9 @@
 export default {
   name: 'Header_vue',
   data() {
-    return {
-      itemCount: 0
-    };
-  },
-  computed: {
-    itemsFromLocalStorage() {
-      return JSON.parse(localStorage.getItem('cartItems') || '[]');
+    return{
+     itemCount: 0,
+     cart: []
     }
   },
   methods: {
@@ -51,23 +44,32 @@ export default {
       this.itemCount = this.calculateItemCount();
     },
     changeLanguage(lang) {
-      this.$store.dispatch('updateLanguage', lang);
-      this.$i18n.locale = lang;
+      this.$store.dispatch('updateLanguage', lang); // Update Vuex store
+      this.$i18n.locale = lang; // Update i18n locale
     }
+    
+  },
+  computed: { 
+            itemsFromLocalStorage() { 
+                return JSON.parse(localStorage.getItem('cartItems') || '[]'); 
+            }
   },
   mounted() {
     this.updateItemCount();
   },
-  watch: {
-    cart() {
-      this.updateItemCount();
-    }
-  },
-  created() {
-    this.cart = this.itemsFromLocalStorage;
-  }
-};
+   watch: { 
+            cart(){
+                this.updateItemCount();
+            }, 
+        },
+         created() { 
+            this.cart = this.itemsFromLocalStorage; 
+        }, 
+}
+
+
 </script>
+
 <style scoped>
 .header {
   background-color: rgb(249, 213, 219);
@@ -156,12 +158,19 @@ export default {
   margin-left: 10px; /* Adjust spacing between cart and language switcher */
 }
 
-.language-switcher .button {
+.language-switcher button {
   cursor: pointer;
   margin: 0 5px;
-  padding: 5px;
-  color:red;
+  padding: 8px 12px;
+  font-size: 16px;
   font-family: "Roboto Mono", monospace;
+  border: 2px solid transparent;
+  background-color: transparent;
+  color: red;
+  transition: all 0.3s ease;
 }
 
+.language-switcher button:hover {
+  color:black;
+}
 </style>
