@@ -1,25 +1,25 @@
 <template>
   <div class="home">
-     <h2>Customers' Favorites</h2>
+     <h2>{{$t("favoriti")}}:</h2>
      <div class="card-container">
       <div class="levi"><img src="/Hrana/zmaj.png" alt="" class="zmaj"></div>
         <div class="card" v-for="dish in topRatedDishes" :key="dish.id">
-          <div class="dish-name">{{ $t(dish.name) }}</div> 
+          <div class="dish-name">{{ $t( dish.category + '.' + dish.id + '.name') }}</div> 
           <router-link :to="{ name: 'Menu' }">
             <img :src="dish.image" alt="dish image" class="dish-image">
           </router-link>
-          <div class="dish-rate">Customers rated: {{ (dish.rate / dish.num).toFixed(2) }}/5</div>
+          <div class="dish-rate">{{$t("ocenili")}}: {{ (dish.rate / dish.num).toFixed(2) }}/5</div>
         </div>
         <div v-show="topRatedDishes.length === 0" class="gif"><img src="Hrana/giff.gif" alt="Animated GIF"></div>
         <div  class="desni"><img src="/Hrana/zmaj2.png" alt="" class="zmaj"></div>
       </div>
       <br><br>
-      <h2>Current Promotions</h2>
+      <h2>{{$t("promocije")}}:</h2>
       <div class="card-container">
         <div v-for="pr in promo" class="card" :key="pr.id"> 
-          <div class="dish-name">{{ pr.name }}</div>
+          <div class="dish-name">{{ $t( pr.category + '.' + pr.id + '.name') }}</div>
           <img :src="pr.image" alt="dish image" class="dish-image">
-          <div class="dish-rate">Price reduced to: {{ pr.priceSmall.toFixed(2) }}</div>
+          <div class="dish-rate">{{$t("smanjena")}}: {{ pr.priceSmall.toFixed(2) }}</div>
         </div>
       </div>
   </div>

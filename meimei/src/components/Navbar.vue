@@ -24,13 +24,13 @@
                   :to="subItem.link" 
                   :class="{ active: activeItem === subItem.name }"
                 >
-                  {{ $t(subItem.name) }}
+                  {{ $t(subItem.name + '_list') }}
                 </router-link>
                 <div v-else class="dropdown">
-                  <span>{{ $t(subItem.name) }}</span>
+                  <span>{{ $t(subItem.name + '_list') }}</span>
                   <ul class="dropdown-menu">
                     <li v-for="subSubItem in subItem.subItems" :key="subSubItem.name">
-                      <router-link :to="subSubItem.link">{{ $t(subSubItem.name) }}</router-link>
+                      <router-link :to="subSubItem.link">{{ $t(subItem.name + '_list') }}</router-link>
                     </li>
                   </ul>
                 </div>
@@ -46,8 +46,8 @@
           v-for="(breadcrumb, idx) in breadcrumbList"
           :key="idx"
           :class="{ 'breadcrumb-item': true, active: idx === breadcrumbList.length - 1 }">
-          <span v-if="idx === breadcrumbList.length - 1">{{ breadcrumb.name }}</span>
-          <a v-else href="#" @click.prevent="navigateTo(breadcrumb)">{{ breadcrumb.name }}</a>
+          <span v-if="idx === breadcrumbList.length - 1">{{ $t('breadcrumb.' + breadcrumb.name) }}</span>
+          <a v-else href="#" @click.prevent="navigateTo(breadcrumb)">{{ $t('breadcrumb.' + breadcrumb.name) }}</a>
 
         </li>
         </ol>

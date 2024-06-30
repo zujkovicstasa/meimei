@@ -28,8 +28,8 @@
           <div v-for="dish in sortedDishes" :key="dish.id" class="dish-item" >
             <img :src="dish.image" :alt="dish.name" />
             <br>
-            <h4>{{ $t(dish.name) }}</h4>
-            <p>Price: €{{ dish.priceSmall.toFixed(2) }}</p>
+            <h4>{{ $t(category + '.' + dish.id + '.name') }}</h4>
+            <p>{{$t("cena")}}: €{{ dish.priceSmall.toFixed(2) }}</p>
             <button @click="showDetails(dish)">{{$t("more")}}</button>
             
           </div>
@@ -87,7 +87,10 @@
   methods: {
     showDetails(dish) {
       this.$emit('show-details', dish);
-    }
+    },
+    // getTranslationKey(id, category, property) {
+    //   return ('${category}.${id}.${property}');
+    // }
   }
   
 };

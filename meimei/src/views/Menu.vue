@@ -4,7 +4,7 @@
       <router-view v-if="!selectedDish" :dishes="groups" @show-details="showDetails"></router-view>
       
       <!--<ProductList v-if="currentGroup" :dishes="groups[currentGroup]" @show-details="showddetails" /> -->
-      <ProductItem v-if="selectedDish" :dish="selectedDish" @close="backTomenu" />
+      <ProductItem v-if="selectedDish" :dish="selectedDish" :category="getCategory(selectedDish)" @close="backTomenu" />
       <div v-if="!showElement" class="menislika">
           <img src="/Hrana/menislika.png" alt="" class="slika">
         </div>

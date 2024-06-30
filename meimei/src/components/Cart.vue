@@ -13,8 +13,8 @@
             <button class="plus" @click="incrementQuantity(item.id,1)">-</button>
           </div>
         </div>
-        <p>Total: €{{ totalPrice }}</p>
-        <button @click="checkout">Checkout</button>
+        <p>{{$t("total")}}: €{{ totalPrice }}</p>
+        <button @click="checkout">{{$t("checkout")}}</button>
       </div>
       <div v-if="showMessage">{{$t("sent_message")}}</div>
     </div>

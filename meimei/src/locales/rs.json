@@ -9,7 +9,7 @@
     "glavna_list": "Glavna jela",
     "dezerti_list": "Dezerti",
     "kokteli_list" : "Kokteli",
-    "boba_list": "Bubble Tea",
+    "boba_list": "Boba Čaj",
 
     "search": "Pretraži",
     "sort":"Sortiraj:",
@@ -19,11 +19,6 @@
     "more": "Prikaži više",
   
     "downloadMenu": "Preuzmite naš meni",
-    "predjela": "Predjela",
-    "glavna": "Glavna jela",
-    "dezerti": "Dezerti",
-    "kokteli": "Kokteli",
-    "boba": "Bubble Tea",
     "small" : "Mala:",
     "big": "Velika:",
     "quantity": "Količina:",
@@ -38,6 +33,8 @@
     "cart":"KORPA",
     "empty": "Vaša korpa je prazna...",
     "sent_message": "Vaša porudžbina je poslata. Hvala Vam!",
+    "checkout": "Naruči",
+    "total":"Ukupno",
     "not_yet": "Još uvek niste poručili...",
     "total_price": "Ukupan iznos:",
     "orders": "PORUDŽBINE",
@@ -50,149 +47,137 @@
     
     "reviews": "OCENE GOSTIJU",
     "visit": "POSETITE NAS",
+    "favoriti": "Favoriti gostiju",
+    "promocije": "Trenutne promocije",
+    "ocenili": "Gosti su ocenili",
+  "smanjena":"Trenutna cena",
     
-    "groups": {
-      "predjela": [
-        {
-          "id": 1,
+      "predjela": {
+        "1":{
           "name": "Prolećne rolnice",
           "priceSmall": 5.90,
           "priceLarge": 8.90,
           "description": "Hrskave, zlatno-smeđe proljetne rolnice pune mješavine ribanog kupusa, šargarepe i staklenih rezanaca, zamotane u delikatni rižin papir, poslužene uz naš karakteristični sos od slatkog čilija.",
           "image": "/Hrana/springrolls.PNG"
         },
-        {
-          "id": 15,
+        "15":{
           "name": "Pho Supa",
           "priceSmall": 9.90,
           "priceLarge": 12.90,
           "description": "Bogata, aromatična supa kuhana satima, poslužena s nježnim rižinim rezancima, tanko narezanim goveđim mesom i ukrašena svježim biljem, klicama pasulja, limetom i čili paprikama - harmonija ukusnih i osvježavajućih ukusa u svakom zalogaju.",
           "image": "/Hrana/phosoup.png"
         },
-        {
-          "id": 16,
+        "16":{
           "name": "Čili Pikantna Supa",
           "priceSmall": 8.90,
           "priceLarge": 11.90,
           "description": "Pikantna i ukusna avantura u svakoj zdjeli: robusna supa obogaćena ljutim čili paprikama i aromatičnim začinima, dopunjena tofuom, ukrašena svježim biljem i poslužena vruća.",
           "image": "/Hrana/kisela.png"
         }
-      ],
-      "glavna": [
-        {
-          "id": 2,
+      },
+      "glavna": {
+        "2":{
           "name": "Bao Buns",
           "priceSmall": 6.80,
           "priceLarge": 8.80,
           "description": "Meke, pahuljaste, parene rolnice pune nježnim, mariniranim svinjskim stomakom uparenim s hrskavim krastavcima i nagoveštajem hoisin sosa.",
           "image": "/Hrana/baobuns.PNG"
         },
-        {
-          "id": 3,
+        "3":{
           "name": "BBQ Svinjetina",
           "priceSmall": 10.90,
           "priceLarge": 13.90,
-          "description": "Nježni komadići kineske BBQ svinjetine (Char Siu), marinirani i premazani sosom slatko-slanog ukusa, posluženi preko jasminkine riže, uz sveže sezonsko povrće i kapljicu našeg specijalnog sosa.",
+          "description": "Nežni komadići kineske BBQ svinjetine (Char Siu), marinirani i premazani sosom slatko-slanog ukusa, posluženi preko jasminkine riže, uz sveže sezonsko povrće i kapljicu našeg specijalnog sosa.",
           "image": "/Hrana/bbqpork.PNG"
         },
-        {
-          "id": 4,
+        "4":{
           "name": "Nudle",
           "priceSmall": 11.70,
           "priceLarge": 14.70,
           "description": "Stir-fried nudle pomešane sa svežim zelenim lukom i bogatim, ukusnim patkom, stručnim prženjem do savršene nežnosti.",
           "image": "/Hrana/noodles.PNG"
         }
-      ],
-      "dezerti": [
-        {
-          "id": 5,
-          "name": "Toffee Banana",
+      },
+      "dezerti": {
+        "5":{
+          "name": "Tofi Banana",
           "priceSmall": 6.40,
           "priceLarge": 9.40,
           "description": "Slatke, karamelizovane banane prelivene bogatim toffee sosom, poslužene tople uz kuglu kremastog sladoleda od vanile.",
           "image": "/Hrana/toffeebanana.PNG"
         },
-        {
-          "id": 6,
-          "name": "Fried Ice Cream",
+        "6":{
+          "name": "Pohovani Sladoled",
           "priceSmall": 7.60,
           "priceLarge": 10.60,
           "description": "Sladoled od vanile delikatno prekriven hrskavom korom od prezli, preliven toplim karamel sosom i ukrašen kapicom šlaga.",
           "image": "/Hrana/friedicecream.PNG"
         },
-        {
-          "id": 7,
+        "7":{
           "name": "Čokoladni Sladoled",
           "priceSmall": 4.90,
           "priceLarge": 7.90,
           "description": "Sladoled od tamne čokolade obogaćen komadićima tamne narandžaste čokolade, poslužena uz krišku sveže narandže za osvežavajući citrusni finiš.",
           "image": "/Hrana/icecream.PNG"
         }
-      ],
-      "kokteli": [
-        {
-          "id": 8,
+      },
+      "kokteli": {
+        "8":{
           "name": "Meigroni",
           "priceSmall": 10.90,
           "priceLarge": 14.90,
-          "description": "Naš karakteristični koktel napravljen u jednakim delovima džin, slatki vermut i Campari, ukrašen twistom narandže za gorko-sladak i sofisticiran ukus.",
+          "description": "Naš karakteristični koktel napravljen u jednakim delovima od džina, slatkog vermuta i Campari-a, ukrašen narandžom za gorko-sladak i sofisticiran ukus.",
           "image": "/Hrana/IMG_4444.PNG"
         },
-        {
-          "id": 9,
+        "9":{
           "name": "Aperol Spritz",
           "priceSmall": 8.90,
           "priceLarge": 12.90,
-          "description": "Osvežavajuća mešavina Aperola, prosecca i sode, ukrašena kriškom narandže za pikantni twist.",
+          "description": "Osvežavajuća mešavina Aperola, proseka i sode, ukrašena kriškom narandže za pikantni twist.",
           "image": "/Hrana/IMG_4445.PNG"
         },
-        {
-          "id": 10,
+        "10":{
           "name": "Cosmopolitan",
           "priceSmall": 8.30,
           "priceLarge": 12.30,
           "description": "Klasični koktel sa vodkom, triple sec, sokom od brusnice i kapljicom svežeg soka od limete, protresen i procijeđen u ohlađenu martini čašu sa twistom narandže.",
           "image": "/Hrana/IMG_4447.PNG"
         },
-        {
-          "id": 11,
+        "11":{
           "name": "Mojito",
           "priceSmall": 7.80,
           "priceLarge": 10.80,
           "description": "Osvežavajući kubanski koktel napravljen s belim rumom, svežim listovima mente, sokom od limete, šećerom i soda vodom, posluženo preko leda za osvežavajuće piće.",
           "image": "/Hrana/IMG_4449.PNG"
         }
-      ],
-      "boba": [
-        {
-          "id": 12,
-          "name": "Ice caramel boba latte",
+      },
+      "boba": {
+        "12":{
+          "name": "Hladni boba late s karamelom",
           "priceSmall": 6.80,
           "priceLarge": 9.80,
-          "description": "Naš karakteristični blend bogatog karamelnog sirupa, ohlađenog mlijeka i espressa, prekrivenog žvakaćim tapioka kuglicama za ugodan twist klasičnog latte iskustva.",
+          "description": "Naš karakteristični blend bogatog karamelnog sirupa, ohlađenog mleka i espresa, prekrivenog tapioka kuglicama za ugodan preokret klasičnog late iskustva.",
           "image": "/Hrana/IMG_4446.PNG"
         },
-        {
-          "id": 13,
+        "13":{
           "name": "Matcha boba",
           "priceSmall": 5.90,
           "priceLarge": 8.90,
-          "description": "Moderan twist na tradicionalni matcha čaj infuziran kremastim mlekom i posluženo sa žvakaćim tapioka kuglicama, nudeći ugodnu kombinaciju zemljanog matcha ukusa i zadovoljavajuće teksture.",
+          "description": "Moderan zaokret na tradicionalni matcha čaj infuziran kremastim mlekom i posluženo sa tapioka kuglicama, nudeći ugodnu kombinaciju zemljanog matcha ukusa i zadovoljavajuće teksture.",
           "image": "/Hrana/IMG_4448.PNG"
         },
-        {
-          "id": 14,
-          "name": "Strawberry milkshake boba",
+        "14":{
+          "name": "Boba milkšejk od jagode",
           "priceSmall": 7.20,
           "priceLarge": 10.20,
-          "description": "Ugodna fuzija kremastog milkshake-a i osvežavajućeg bubble čaja, sa slatkim ukusom jagode pomešanim sa mlekom i prekriveno žvakaćim tapioka kuglicama za jedinstveno i zadovoljavajuće uživanje.",
+          "description": "Ugodna fuzija kremastog milkšejka i osvežavajućeg boba čaja, sa slatkim ukusom jagode pomešanim sa mlekom i prekriveno tapioka kuglicama za jedinstveno i zadovoljavajuće uživanje.",
           "image": "/Hrana/IMG_4450.PNG"
         }
-      ]
-    },
+      }
+    ,
   
     "aboutUs": "Zašto izabrati nas?",
+    "cena":"Cena",
     "aboutUsDescription": "Otkrijte suštinu kineske kuhinje u MEIMEI restoranu. Koristimo najfinije sastojke kako bismo stvorili autentične ukuse koji će vam doneti Kinu na sto. Naše ljubazno osoblje osigurava da svaka poseta bude dočekana sa toplinom i efikasnošću. Istražite raznovrsni meni koji nudi tradicionalne favorite i inovativna jela.",
     "menuButton": "Naš Meni",
     "stepsTitle": "3 JEDNOSTAVNA KORAKA",
@@ -203,7 +188,35 @@
     "step3Title": "Uživajte u hrani!",
     "step3Description": "Uživajte u ugodnom gastronomskom iskustvu u udobnosti svog doma. Od prvog zalogaja do posljednjeg, uživajte u autentičnim okusima i besprijekornoj kvaliteti koje definiraju našu kuhinju.",
     "guestReviewsTitle": "RECENZIJE GOSTIJU",
-    "visitUsTitle": "Posetite Nas"
+    "visitUsTitle": "Posetite Nas",
+    "breadcrumb": {
+    "Home": "Početna",
+    "Gallery": "Galerija",
+   "Menu": "Meni",
+    "Appetizers": "Predjela",
+    "Main courses": "Glavna jela",
+    "Desserts":"Dezerti",
+    "Cocktails": "Kokteli",
+    "Bubble Tea": "Boba Čaj",
+    "Account": "Moj nalog",
+    "About": "O nama",
+    "Noodles": "Nudle",
+    "Cosmopolitan": "Cosmopolitan",
+    "Aperol Spritz": "Aperol Spritz",
+    "Meigroni": "Meigroni",
+    "Ice caramel boba latte": "Hladni boba late s karamelom",
+    "Strawberry milkshake boba": "Boba milkšejk od jagode",
+    "Matcha boba": "Matcha boba",
+    "BBQ Pork": "BBQ Svinjetina",
+    "Bao Buns": "Bao Buns",
+    "Spring Rolls": "Prolećne rolnice",
+    "Pho Soup": "Pho Supa",
+    "Toffee Banana": "Tofi Banana",
+    "Fried Ice Cream": "Pohovani Sladoled",
+    "Chocolate Ice Cream":"Čokoladni Sladoled",
+    "Chili Savory Soup":"Čili Pikantna Supa",
+    "Mojito":"Mojito"
+  }
   
     
   }

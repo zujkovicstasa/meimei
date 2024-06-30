@@ -2,8 +2,8 @@
 <div class="okolo">
   <div v-if="dish" class="dish-details" :class="{ 'dish-image': shouldApplyClass }">
       <img :src="dish.image" :alt="dish.name" />
-      <h3>{{ dish.name }}</h3>
-      <p class="sredina">{{ dish.description }}</p>
+      <h3>{{ $t(category + '.' + dish.id + '.name') }}</h3>
+      <p class="sredina">{{ $t(category + '.' + dish.id + '.description') }}</p>
       <p>{{$t("small")}} €{{ dish.priceSmall }}</p>
       <p>{{$t("big")}} €{{ dish.priceLarge }}</p>
       <div v-show="!showRate" class="card1" ref="starElems">
@@ -64,7 +64,8 @@
   export default {
     
     props: {
-      dish: Object
+      dish: Object,
+      category: String
     },
     data() {
       return {

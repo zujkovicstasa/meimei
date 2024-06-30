@@ -6,6 +6,20 @@ import Account from '../views/MyAccount.vue'
 import About from '../views/About.vue'
 import ProductList from '../components/ProductList.vue'
 //import ProductItem from '../components/ProductItem'
+import {dishes} from '../data/dishes.js'
+import { createI18n } from 'vue-i18n';
+import enMessages from '../locales/en.json';
+import rsMessages from '../locales/rs.json';
+
+// Create Vue I18n instance
+const i18n = createI18n({
+    locale: 'en', // set initial locale
+    fallbackLocale: 'en', // set fallback locale
+    messages: {
+        en: enMessages,
+        rs: rsMessages,
+    },
+});
 
 const routes = [
   { path: '/', name: 'Home', component: HomeView, meta: { breadcrumb: [{name:'Home' } ]}},
@@ -71,6 +85,14 @@ const routes = [
           const category = to.params.category;
           to.meta.breadcrumb[1].link = `menu/${category}`;
           to.meta.breadcrumb[1].name =`${to.params.category}`
+          to.meta.breadcrumb[2].name = `${to.params.id}`;
+          const dishName = to.params.id; // Assuming id is the name of the dish
+          const dish = dishes.find(dish => dish.name === dishName);
+          if (dish) {
+            to.meta.breadcrumb[2].name = i18n.global.t(`${category}.${dish.id}.name`);
+          } else {
+            to.meta.breadcrumb[2].name = dishName; // Fallback to the original name if dish is not found
+          }
           switch(to.meta.breadcrumb[1].name){
             case 'kokteli':
               to.meta.breadcrumb[1].name = 'Cocktails';
@@ -88,7 +110,7 @@ const routes = [
               to.meta.breadcrumb[1].name = 'Desserts';
               break;
           }
-          to.meta.breadcrumb[2].name = `${to.params.id}`
+          
         next();
       } 
     }
