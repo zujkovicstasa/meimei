@@ -3,23 +3,23 @@
       
     <div>
         
-        <h3 v-if="category === 'predjela'">Appetizers</h3>
-        <h3 v-else-if="category === 'glavna'">Main Courses</h3>
-        <h3 v-else-if="category === 'dezerti'">Desserts</h3>
-        <h3 v-else-if="category === 'kokteli'">Cocktails</h3>
-        <h3 v-else-if="category === 'boba'">Bubble Tea</h3>
+        <h3 v-if="category === 'predjela'">{{$t("predjela_list")}}</h3>
+        <h3 v-else-if="category === 'glavna'">{{$t("glavna_list")}}</h3>
+        <h3 v-else-if="category === 'dezerti'">{{$t("dezerti_list")}}</h3>
+        <h3 v-else-if="category === 'kokteli'">{{$t("kokteli_list")}}</h3>
+        <h3 v-else-if="category === 'boba'">{{$t("boba_list")}}</h3>
         <h3 v-else>Menu</h3>
         <div class="row pretraga" >
           <div class="col-12 col-md-6 levi">
-            <input type="text" placeholder="Search" class="forma" v-model="searchTerm" />
+            <input type="text" :placeholder="$t('search')" class="forma" v-model="searchTerm" />
           </div>
             
           <div class="col-12 col-md-6 desni">
-            <label>Sort by:</label>
+            <label>{{ $t("sort") }}</label>
             <select v-model="sortBy" class="forma">
-              <option value="name">Name</option>
-              <option value="priceSmall">Price (Low to High)</option>
-              <option value="nameAndPrice">Name&Price</option>
+              <option value="name">{{$t("name")}}</option>
+              <option value="priceSmall">{{$t("low_high")}}</option>
+              <option value="nameAndPrice">{{$t("name_price")}}</option>
             </select>
           </div>
           
@@ -28,9 +28,9 @@
           <div v-for="dish in sortedDishes" :key="dish.id" class="dish-item" >
             <img :src="dish.image" :alt="dish.name" />
             <br>
-            <h4>{{ dish.name }}</h4>
+            <h4>{{ $t(dish.name) }}</h4>
             <p>Price: €{{ dish.priceSmall.toFixed(2) }}</p>
-            <button @click="showDetails(dish)">Show more</button>
+            <button @click="showDetails(dish)">{{$t("more")}}</button>
             
           </div>
         </div>

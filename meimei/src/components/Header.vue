@@ -5,15 +5,11 @@
       <img src="../assets/logo-removebg.png" alt="Site logo"></router-link>
       <span><router-link to="/" class="nesto">MEIMEI</router-link></span>
     </div>
-
-    
-     
+    <div class="language-switcher" >
     <button @click="changeLanguage('en')">EN</button>
-    <button @click="changeLanguage('rs')">RS</button>
+    <button @click="changeLanguage('rs')">RS</button></div>
 
     <div class="korpa box badge"  v-bind:value="this.itemCount"> <router-link to="/account"><img src="/cart.png" alt=""></router-link></div>
-    
-    
     
   </header>
 </template>
@@ -144,24 +140,26 @@ export default {
         opacity:0.9;
         align-items: center;
     }
-.language-switcher {
+
+  .language-switcher {
   display: flex;
   justify-content: flex-end;
   height: auto;
-  position:absolute;
-  right:0;
+  position: absolute;
+  right: 0;
   bottom: 0;
-  display: flex;
-  padding-bottom:18px;
+  padding-bottom: 18px;
   padding-right: 70px;
   align-items: center;
-  margin-left: 10px; /* Adjust spacing between cart and language switcher */
+  margin-left: 10px;
+  border: 2px solid transparent;
+  background-color: transparent;
+  color: red;
 }
 
 .language-switcher button {
   cursor: pointer;
   margin: 0 5px;
-  padding: 8px 12px;
   font-size: 16px;
   font-family: "Roboto Mono", monospace;
   border: 2px solid transparent;
@@ -171,6 +169,10 @@ export default {
 }
 
 .language-switcher button:hover {
-  color:black;
+  font-weight: bold;
 }
+.language-switcher{
+  z-index: 10;
+}
+
 </style>

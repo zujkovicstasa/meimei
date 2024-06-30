@@ -13,10 +13,10 @@
             :to="item.link" 
             :class="{ active: activeItem === item.name }"
           >
-            {{ item.name }}
+            {{ $t(item.name) }}
           </router-link>
           <div v-else class="dropdown">
-            <span :class="{ active: activeItem === item.name }">{{ item.name }}</span>
+            <span :class="{ active: activeItem === item.name }">{{ $t(item.name) }}</span>
             <ul class="dropdown-menu" v-if="activeItem === item.name">
               <li v-for="subItem in item.subItems" :key="subItem.name">
                 <router-link 
@@ -24,13 +24,13 @@
                   :to="subItem.link" 
                   :class="{ active: activeItem === subItem.name }"
                 >
-                  {{ subItem.name }}
+                  {{ $t(subItem.name) }}
                 </router-link>
                 <div v-else class="dropdown">
-                  <span>{{ subItem.name }}</span>
+                  <span>{{ $t(subItem.name) }}</span>
                   <ul class="dropdown-menu">
                     <li v-for="subSubItem in subItem.subItems" :key="subSubItem.name">
-                      <router-link :to="subSubItem.link">{{ subSubItem.name }}</router-link>
+                      <router-link :to="subSubItem.link">{{ $t(subSubItem.name) }}</router-link>
                     </li>
                   </ul>
                 </div>
@@ -67,20 +67,20 @@ export default {
       activeItem: '',
       breadcrumbList: [],
       menuItems: [
-        { name: 'Home', link: '/' },
+        { name: 'home', link: '/' },
         {
-          name: 'Menu',
+          name: 'menu',
           subItems: [
-            { name: 'Appetizers', link: '/menu/predjela' },
-            { name: 'Main courses', link: '/menu/glavna' },
-            { name: 'Desserts', link: '/menu/dezerti' },
-            { name: 'Cocktails', link: '/menu/kokteli',},
-            { name: 'Bubble tea', link: '/menu/boba',}
+            { name: 'predjela', link: '/menu/predjela' },
+            { name: 'glavna', link: '/menu/glavna' },
+            { name: 'dezerti', link: '/menu/dezerti' },
+            { name: 'kokteli', link: '/menu/kokteli' },
+            { name: 'boba', link: '/menu/boba' }
           ]
         },
-        { name: 'Gallery', link: '/gallery' },
-        { name: 'My account', link: '/account' },
-        { name: 'About us', link: '/about' }
+        { name: 'gallery', link: '/gallery' },
+        { name: 'account', link: '/account' },
+        { name: 'about', link: '/about' }
       ]
     }
   },watch: { '$route' () { this.breadcrumbList = this.$route.meta.breadcrumb; } },

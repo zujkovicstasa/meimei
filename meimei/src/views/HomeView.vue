@@ -4,7 +4,7 @@
      <div class="card-container">
       <div class="levi"><img src="/Hrana/zmaj.png" alt="" class="zmaj"></div>
         <div class="card" v-for="dish in topRatedDishes" :key="dish.id">
-          <div class="dish-name">{{ dish.name }}</div> 
+          <div class="dish-name">{{ $t(dish.name) }}</div> 
           <router-link :to="{ name: 'Menu' }">
             <img :src="dish.image" alt="dish image" class="dish-image">
           </router-link>

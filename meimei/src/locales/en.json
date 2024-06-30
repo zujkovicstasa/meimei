@@ -4,8 +4,51 @@
   "gallery": "Gallery",
   "account": "My Account",
   "about": "About Us",
+
+  "predjela_list" : "Appetizers",
+  "glavna_list": "Main Courses",
+  "dezerti_list": "Desserts",
+  "kokteli_list" : "Cocktails",
+  "boba_list": "Bubble Tea",
+
+  "search": "Search",
+  "sort":"Sort by:",
+  "name": "Name",
+  "low_high": "Price(Low to High)",
+  "name_price":"Name&Price",
+  "more": "Show more", 
+
   "downloadMenu": "Download our menu",
-  "menuData": {
+  "predjela": "Appetizers",
+  "glavna": "Main Courses",
+  "dezerti": "Desserts",
+  "kokteli": "Cocktails",
+  "boba": "Bubble Tea",
+  "portion_size" : "Portion size:",
+  "small" : "Small:",
+  "big": "Big:",
+  "quantity": "Quantity:",
+  "want_to_rate":"Select stars to rate",
+  "rated":"Our customers have rated this product:",
+  "add_to_cart": "Add to Cart",
+  "rate": "Rate",
+  "download_menu" : "Download Our Menu",
+  "back_to_menu" : "Menu",
+
+  "cart":"CART",
+  "empty": "Your cart is empty...",
+  "sent_message": "Your order has been sent. Thank you!",
+  "not_yet": "You have not ordered yet...",
+  "total_price": "Total price:",
+  "orders": "ORDERS",
+
+  "milica": "Absolutely loved my meal at MEIMEI! The Bao Buns were heavenly – soft, flavorful, and perfectly balanced with tender pork belly. A must-visit for anyone craving authentic Chinese cuisine in town.",
+  "marko": "MEIMEI is a gem! The flavors in every dish are exceptional, truly transporting me to China with each bite. The staff's warm hospitality made our dining experience unforgettable. Can't wait to visit again!",
+  "petar": "What a delightful discovery! The Toffee Banana dessert was the perfect ending to a fantastic meal. Each dish showcased the chef's mastery in blending traditional flavors with modern twists. Highly recommend!",
+
+  "reviews": "GUEST REVIEWS",
+  "visit": "VISIT US",
+  "groups": {
     "predjela": [
       {
         "id": 1,
@@ -144,5 +187,20 @@
         "image": "/Hrana/IMG_4450.PNG"
       }
     ]
-  }
+  },
+
+  "aboutUs": "Why Choose Us?",
+  "aboutUsDescription": "Discover the essence of Chinese cuisine at MEIMEI. We use the finest ingredients to create authentic flavors that bring China to your table. Our friendly staff ensures every visit is met with warmth and efficiency. Explore a diverse menu offering traditional favorites and innovative dishes.",
+  "menuButton": "Our Menu",
+  "stepsTitle": "3 SIMPLE STEPS",
+  "step1Title": "Choose your dish",
+  "step1Description": "We offer a diverse menu, whether you're craving traditional flavors or exploring something new, our dishes are prepared with the freshest ingredients to satisfy your taste buds.",
+  "step2Title": "Fast delivery",
+  "step2Description": "We understand the importance of timely service. Enjoy swift and reliable delivery so your food arrives fresh and ready to enjoy, whether you're dining in or ordering takeout.",
+  "step3Title": "Enjoy your food!",
+  "step3Description": "Indulge in a delightful dining experience at the comfort of your own home. From the first bite to the last, savor the authentic flavors and impeccable quality that define our cuisine.",
+  "guestReviewsTitle": "GUEST REVIEWS",
+  "visitUsTitle": "Visit Us"
+
+  
 }

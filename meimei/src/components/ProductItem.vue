@@ -4,32 +4,32 @@
       <img :src="dish.image" :alt="dish.name" />
       <h3>{{ dish.name }}</h3>
       <p class="sredina">{{ dish.description }}</p>
-      <p>Small: €{{ dish.priceSmall }}</p>
-      <p>Large: €{{ dish.priceLarge }}</p>
+      <p>{{$t("small")}} €{{ dish.priceSmall }}</p>
+      <p>{{$t("big")}} €{{ dish.priceLarge }}</p>
       <div v-show="!showRate" class="card1" ref="starElems">
-        <p class="ital">Our customers rated this product:</p>
+        <p class="ital">{{$t("rated")}}</p>
         <span v-for="(star, index) in stars" 
           :key="index" 
           class="star1">★</span>
           <br>
       </div>
-      <button @click="showAddToCartForm" v-if="!showForm && !showMessage && !showRate">Add to Cart</button>
+      <button @click="showAddToCartForm" v-if="!showForm && !showMessage && !showRate">{{$t("add_to_cart")}}</button>
       <div v-show="showForm">
-        <label for="quantity">Quantity:</label>
+        <label for="quantity">{{$t("quantity")}}</label>
         <input type="number" id="quantity" class="forma" v-model="quantity" min="1" required>
         <br>
-        <label for="portionSize">Portion Size:</label>
+        <label for="portionSize">{{$t("portion_size")}}</label>
         <select id="portionSize" class="forma" v-model="portionSize" @change="updatePrice">
-          <option value="small">Small</option>
-          <option value="large">Large</option>
+          <option value="small">{{$t("small")}}</option>
+          <option value="large">{{$t("big")}}</option>
         </select>
         <br>
-        <button @click="addToCart">Add to Cart</button>
-        <button @click="rateUs">Rate</button>
+        <button @click="addToCart">{{$t("add_to_cart")}}</button>
+        <button @click="rateUs">{{ $t("rate") }}</button>
         <a href="/Hrana/menu.pdf" download="menu.pdf">
-          <button>Download our menu</button>
+          <button>{{ $t("download_menu") }}</button>
         </a>
-        <button @click="$emit('close')">Back to menu</button>
+        <button @click="$emit('close')">{{$t("back_to_menu")}}</button>
       </div>
       <div v-show="showRate" ref="starElements" class="card">
         <span v-for="(star, index) in stars" 
@@ -37,22 +37,22 @@
           class="star" 
           @click="setRating(index+1)">★</span>
           <br>
-          <p class="ital">Click on a wanted star to set rate.</p>
-          <button @click="showAddToCartForm">Add to Cart</button>
-          <button @click="ratingUs">Rate</button>
+          <p class="ital">{{$t("want_to_rate")}}</p>
+          <button @click="showAddToCartForm">{{$t("add_to_cart")}}</button>
+          <button @click="ratingUs">{{ $t("rate") }}</button>
           <a href="/Hrana/menu.pdf" download="menu.pdf">
-            <button>Download our menu</button>
+            <button>{{$t("download_menu")}}</button>
           </a>
-          <button @click="$emit('close')">Back to menu</button>
+          <button @click="$emit('close')">{{$t("back_to_menu")}}</button>
       </div>
       <div v-show="showMessage">
         Your order has been added to cart.
       </div>
-      <button @click="rateUs" v-if="!showForm && !showRate">Rate</button>
+      <button @click="rateUs" v-if="!showForm && !showRate">{{ $t("rate") }}</button>
       <a href="/Hrana/menu.pdf" download="menu.pdf" v-if="!showForm && !showRate">
-        <button>Download our menu</button>
+        <button>{{$t("download_menu")}}</button>
       </a>
-      <button @click="$emit('close')" v-if="!showForm && !showRate">Back to menu</button>
+      <button @click="$emit('close')" v-if="!showForm && !showRate">{{$t("back_to_menu")}}</button>
   </div>
 
     

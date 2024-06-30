@@ -4,12 +4,58 @@
     "gallery": "Galerija",
     "account": "Moj Nalog",
     "about": "O Nama",
+
+    "predjela_list" : "Predjela",
+    "glavna_list": "Glavna jela",
+    "dezerti_list": "Dezerti",
+    "kokteli_list" : "Kokteli",
+    "boba_list": "Bubble Tea",
+
+    "search": "Pretraži",
+    "sort":"Sortiraj:",
+    "name": "Naziv",
+    "low_high": "Cena (Niža ka Visoj)",
+    "name_price":"Naziv i Cena",
+    "more": "Prikaži više",
+  
     "downloadMenu": "Preuzmite naš meni",
-    "menuData": {
+    "predjela": "Predjela",
+    "glavna": "Glavna jela",
+    "dezerti": "Dezerti",
+    "kokteli": "Kokteli",
+    "boba": "Bubble Tea",
+    "small" : "Mala:",
+    "big": "Velika:",
+    "quantity": "Količina:",
+    "want_to_rate":"Selektujte zvezdice za ocenjivanje",
+    "rated":"Naši gosti su ocenili ovaj proizvod:",
+    "portion_size" : "Veličina porcije:",
+    "add_to_cart": "Dodaj u korpu",
+    "rate": "Oceni",
+    "download_menu" : "Preuzmite naš meni",
+    "back_to_menu" : "Meni",
+
+    "cart":"KORPA",
+    "empty": "Vaša korpa je prazna...",
+    "sent_message": "Vaša porudžbina je poslata. Hvala Vam!",
+    "not_yet": "Još uvek niste poručili...",
+    "total_price": "Ukupan iznos:",
+    "orders": "PORUDŽBINE",
+
+    
+    "milica": "Apsolutno sam oduševljena svojim obrokom u MEIMEI! Bao buns su bile božanstvene – mekane, ukusne i savršeno izbalansirane sa nežnim svinjskim stomakom. Obavezna poseta za svakoga ko žudi za autentičnom kineskom kuhinjom u gradu.",
+    "marko": "MEIMEI je dragulj! Ukusi u svakom jelu su izuzetni, zaista me transportuju u Kinu sa svakim zalogajem. Topla gostoljubivost osoblja učinila je naše iskustvo nezaboravnim. Jedva čekam da ponovo posetim!",
+    "petar": "Kakvo divno otkriće! Dezert sa karamelizovanim bananama bio je savršen završetak fantastičnog obroka. Svako jelo je pokazalo majstorstvo kuvara u kombinovanju tradicionalnih ukusa sa modernim dodacima. Toplo preporučujem!",
+  
+    
+    "reviews": "OCENE GOSTIJU",
+    "visit": "POSETITE NAS",
+    
+    "groups": {
       "predjela": [
         {
           "id": 1,
-          "name": "Spring Rolls",
+          "name": "Prolećne rolnice",
           "priceSmall": 5.90,
           "priceLarge": 8.90,
           "description": "Hrskave, zlatno-smeđe proljetne rolnice pune mješavine ribanog kupusa, šargarepe i staklenih rezanaca, zamotane u delikatni rižin papir, poslužene uz naš karakteristični sos od slatkog čilija.",
@@ -144,6 +190,21 @@
           "image": "/Hrana/IMG_4450.PNG"
         }
       ]
-    }
+    },
+  
+    "aboutUs": "Zašto izabrati nas?",
+    "aboutUsDescription": "Otkrijte suštinu kineske kuhinje u MEIMEI restoranu. Koristimo najfinije sastojke kako bismo stvorili autentične ukuse koji će vam doneti Kinu na sto. Naše ljubazno osoblje osigurava da svaka poseta bude dočekana sa toplinom i efikasnošću. Istražite raznovrsni meni koji nudi tradicionalne favorite i inovativna jela.",
+    "menuButton": "Naš Meni",
+    "stepsTitle": "3 JEDNOSTAVNA KORAKA",
+    "step1Title": "Izaberite jelo",
+    "step1Description": "Nudimo raznovrsni meni, bilo da želite tradicionalne ukuse ili istražujete nešto novo, naša jela pripremamo sa najsvježijim sastojcima kako bismo zadovoljili vaše nepce.",
+    "step2Title": "Brza dostava",
+    "step2Description": "Razumijemo važnost brze usluge. Uživajte u brzoj i pouzdanoj dostavi kako bi vaša hrana stigla svježa i spremna za uživanje, bilo da jedete u restoranu ili naručujete za van.",
+    "step3Title": "Uživajte u hrani!",
+    "step3Description": "Uživajte u ugodnom gastronomskom iskustvu u udobnosti svog doma. Od prvog zalogaja do posljednjeg, uživajte u autentičnim okusima i besprijekornoj kvaliteti koje definiraju našu kuhinju.",
+    "guestReviewsTitle": "RECENZIJE GOSTIJU",
+    "visitUsTitle": "Posetite Nas"
+  
+    
   }
   

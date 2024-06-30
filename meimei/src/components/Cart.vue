@@ -2,8 +2,8 @@
   <div class="sve">
     <div class="box">
     <div class="cart">
-      <h2>CART</h2>
-      <div v-if="cartItems.length === 0 && !showMessage">Your cart is empty...</div>
+      <h2>{{ $t("cart") }}</h2>
+      <div v-if="cartItems.length === 0 && !showMessage">{{$t("empty")}}</div>
       <div v-else-if="!showMessage">
         <div v-for="item in cartItems" :key="item.id" class="row cart-item">
           <div class="col-12 col-md-6 levi">{{ item.name }} - €{{ item.price }}</div>
@@ -16,18 +16,18 @@
         <p>Total: €{{ totalPrice }}</p>
         <button @click="checkout">Checkout</button>
       </div>
-      <div v-if="showMessage">Your order has been sent. Thank you!</div>
+      <div v-if="showMessage">{{$t("sent_message")}}</div>
     </div>
     <div class="cart orders">
-      <h2>ORDERS</h2>
-      <div v-if="orderItems.length === 0">You have not ordered yet...</div>
+      <h2>{{$t("orders")}}</h2>
+      <div v-if="orderItems.length === 0">{{$t("not_yet")}}</div>
       <div v-else>
         <div v-for="item in orderItems" :key="item.id" class="cart-item">
           {{ item.id }}
           <div v-for="car in item.list" :key="car.id" class="row">
             <div class="col-12 col-md-6 levi">{{ car.name }} - {{ car.quantity }}</div>
           </div>
-          Total price: {{ item.total }}
+          {{$t("total_price")}} {{ item.total }}
           
         </div>
       </div>
