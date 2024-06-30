@@ -12,7 +12,7 @@
       </a>
     </div>
     <footer class="site-footer">
-      <p>Copyright 2024, Anja Meštrović i Staša Žujković, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta u Beogradu</p>
+      <p>{{ $t("futer")}}</p>
     </footer>
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
   text-align: center;
   justify-content: center;
   padding: 20px 0;
-  background-color: #f9d5db; /* Light pink background */
+  background-color: #f9d5db;
   border-top: 2px solid red;
   width: 100%;
   position: relative;
