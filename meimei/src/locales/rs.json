@@ -14,7 +14,7 @@
     "search": "Pretraži",
     "sort":"Sortiraj:",
     "name": "Naziv",
-    "low_high": "Cena (Niža ka Visoj)",
+    "low_high": "Cena (Niža ka Višoj)",
     "name_price":"Naziv i Cena",
     "more": "Prikaži više",
   
@@ -40,7 +40,7 @@
     "orders": "PORUDŽBINE",
 
     
-    "milica": "Apsolutno sam oduševljena svojim obrokom u MEIMEI! Bao buns su bile božanstvene – mekane, ukusne i savršeno izbalansirane sa nežnim svinjskim stomakom. Obavezna poseta za svakoga ko žudi za autentičnom kineskom kuhinjom u gradu.",
+    "milica": "Apsolutno sam oduševljena svojim obrokom u MEIMEI! Bao buns su bile božanstvene – mekane, ukusne i savršeno izbalansirane sa nežnim svinjskim mesom. Svako ko žudi za autentičnom kineskom kuhinjom u gradu obavezno da poseti.",
     "marko": "MEIMEI je dragulj! Ukusi u svakom jelu su izuzetni, zaista me transportuju u Kinu sa svakim zalogajem. Topla gostoljubivost osoblja učinila je naše iskustvo nezaboravnim. Jedva čekam da ponovo posetim!",
     "petar": "Kakvo divno otkriće! Dezert sa karamelizovanim bananama bio je savršen završetak fantastičnog obroka. Svako jelo je pokazalo majstorstvo kuvara u kombinovanju tradicionalnih ukusa sa modernim dodacima. Toplo preporučujem!",
   
@@ -57,21 +57,21 @@
           "name": "Prolećne rolnice",
           "priceSmall": 5.90,
           "priceLarge": 8.90,
-          "description": "Hrskave, zlatno-smeđe proljetne rolnice pune mješavine ribanog kupusa, šargarepe i staklenih rezanaca, zamotane u delikatni rižin papir, poslužene uz naš karakteristični sos od slatkog čilija.",
+          "description": "Hrskave, zlatno-smeđe prolećne rolnice pune mešavine kupusa, šargarepe i staklenih rezanaca, zamotane u delikatni rižin papir, poslužene uz naš karakteristični sos od slatkog čilija.",
           "image": "/Hrana/springrolls.PNG"
         },
         "15":{
           "name": "Pho Supa",
           "priceSmall": 9.90,
           "priceLarge": 12.90,
-          "description": "Bogata, aromatična supa kuhana satima, poslužena s nježnim rižinim rezancima, tanko narezanim goveđim mesom i ukrašena svježim biljem, klicama pasulja, limetom i čili paprikama - harmonija ukusnih i osvježavajućih ukusa u svakom zalogaju.",
+          "description": "Bogata, aromatična supa kuvana satima, poslužena s nežnim rižinim rezancima, tanko narezanim goveđim mesom i ukrašena svežim biljem, klicama pasulja, limetom i čili paprikama - harmonija osvježavajućih ukusa u svakom zalogaju.",
           "image": "/Hrana/phosoup.png"
         },
         "16":{
           "name": "Čili Pikantna Supa",
           "priceSmall": 8.90,
           "priceLarge": 11.90,
-          "description": "Pikantna i ukusna avantura u svakoj zdjeli: robusna supa obogaćena ljutim čili paprikama i aromatičnim začinima, dopunjena tofuom, ukrašena svježim biljem i poslužena vruća.",
+          "description": "Pikantna i ukusna avantura u svakoj činiji: robusna supa obogaćena ljutim čili paprikama i aromatičnim začinima, dopunjena tofuom, ukrašena svežim biljem i poslužena vruća.",
           "image": "/Hrana/kisela.png"
         }
       },
@@ -80,21 +80,21 @@
           "name": "Bao Buns",
           "priceSmall": 6.80,
           "priceLarge": 8.80,
-          "description": "Meke, pahuljaste, parene rolnice pune nježnim, mariniranim svinjskim stomakom uparenim s hrskavim krastavcima i nagoveštajem hoisin sosa.",
+          "description": "Meke, pahuljaste, rolnice sa pare pune nežnim, mariniranim svinjskim mesom uparenim s hrskavim krastavcima i nagoveštajem hoisin sosa.",
           "image": "/Hrana/baobuns.PNG"
         },
         "3":{
           "name": "BBQ Svinjetina",
           "priceSmall": 10.90,
           "priceLarge": 13.90,
-          "description": "Nežni komadići kineske BBQ svinjetine (Char Siu), marinirani i premazani sosom slatko-slanog ukusa, posluženi preko jasminkine riže, uz sveže sezonsko povrće i kapljicu našeg specijalnog sosa.",
+          "description": "Nežni komadići kineske BBQ svinjetine (Char Siu), marinirani i premazani sosom slatko-slanog ukusa, posluženi preko jasminove riže, uz sveže sezonsko povrće i trunku našeg specijalnog sosa.",
           "image": "/Hrana/bbqpork.PNG"
         },
         "4":{
           "name": "Nudle",
           "priceSmall": 11.70,
           "priceLarge": 14.70,
-          "description": "Stir-fried nudle pomešane sa svežim zelenim lukom i bogatim, ukusnim patkom, stručnim prženjem do savršene nežnosti.",
+          "description": "Stir-fried nudle pomešane sa svežim zelenim lukom i bogatom, ukusnom patkom, stručno isprženom do savršene nežnosti.",
           "image": "/Hrana/noodles.PNG"
         }
       },
@@ -117,7 +117,7 @@
           "name": "Čokoladni Sladoled",
           "priceSmall": 4.90,
           "priceLarge": 7.90,
-          "description": "Sladoled od tamne čokolade obogaćen komadićima tamne narandžaste čokolade, poslužena uz krišku sveže narandže za osvežavajući citrusni finiš.",
+          "description": "Sladoled od tamne čokolade obogaćen komadićima tamne narandžaste čokolade, poslužen uz krišku sveže narandže za osvežavajući citrusni finiš.",
           "image": "/Hrana/icecream.PNG"
         }
       },
@@ -140,14 +140,14 @@
           "name": "Cosmopolitan",
           "priceSmall": 8.30,
           "priceLarge": 12.30,
-          "description": "Klasični koktel sa vodkom, triple sec, sokom od brusnice i kapljicom svežeg soka od limete, protresen i procijeđen u ohlađenu martini čašu sa twistom narandže.",
+          "description": "Klasični koktel sa vodkom, triple sec, sokom od brusnice i trunkom svežeg soka od limete, protresen i proceđen u ohlađenu martini čašu sa twistom narandže.",
           "image": "/Hrana/IMG_4447.PNG"
         },
         "11":{
           "name": "Mojito",
           "priceSmall": 7.80,
           "priceLarge": 10.80,
-          "description": "Osvežavajući kubanski koktel napravljen s belim rumom, svežim listovima mente, sokom od limete, šećerom i soda vodom, posluženo preko leda za osvežavajuće piće.",
+          "description": "Osvežavajući kubanski koktel napravljen s belim rumom, svežim listovima mente, sokom od limete, šećerom i soda vodom, poslužen preko leda za osvežavajući finiš.",
           "image": "/Hrana/IMG_4449.PNG"
         }
       },
@@ -163,7 +163,7 @@
           "name": "Matcha boba",
           "priceSmall": 5.90,
           "priceLarge": 8.90,
-          "description": "Moderan zaokret na tradicionalni matcha čaj infuziran kremastim mlekom i posluženo sa tapioka kuglicama, nudeći ugodnu kombinaciju zemljanog matcha ukusa i zadovoljavajuće teksture.",
+          "description": "Moderan zaokret na tradicionalni matcha čaj infuziran kremastim mlekom i poslužen sa tapioka kuglicama, nudeći ugodnu kombinaciju zemljanog matcha ukusa i zadovoljavajuće teksture.",
           "image": "/Hrana/IMG_4448.PNG"
         },
         "14":{
@@ -182,11 +182,11 @@
     "menuButton": "Naš Meni",
     "stepsTitle": "3 JEDNOSTAVNA KORAKA",
     "step1Title": "Izaberite jelo",
-    "step1Description": "Nudimo raznovrsni meni, bilo da želite tradicionalne ukuse ili istražujete nešto novo, naša jela pripremamo sa najsvježijim sastojcima kako bismo zadovoljili vaše nepce.",
+    "step1Description": "Nudimo raznovrsni meni, bilo da želite tradicionalne ukuse ili istražujete nešto novo, naša jela pripremamo sa najsvežijim sastojcima kako bismo zadovoljili vaše nepce.",
     "step2Title": "Brza dostava",
-    "step2Description": "Razumijemo važnost brze usluge. Uživajte u brzoj i pouzdanoj dostavi kako bi vaša hrana stigla svježa i spremna za uživanje, bilo da jedete u restoranu ili naručujete za van.",
+    "step2Description": "Razumemo važnost brze usluge. Uživajte u brzoj i pouzdanoj dostavi kako bi vaša hrana stigla sveža i spremna za uživanje, bilo da jedete u restoranu ili naručujete kući.",
     "step3Title": "Uživajte u hrani!",
-    "step3Description": "Uživajte u ugodnom gastronomskom iskustvu u udobnosti svog doma. Od prvog zalogaja do posljednjeg, uživajte u autentičnim okusima i besprijekornoj kvaliteti koje definiraju našu kuhinju.",
+    "step3Description": "Uživajte u ugodnom gastronomskom iskustvu u udobnosti svog doma. Od prvog zalogaja do poslednjeg, uživajte u autentičnim ukusima i besprekornom kvalitetu koji definišu našu kuhinju.",
     "guestReviewsTitle": "RECENZIJE GOSTIJU",
     "visitUsTitle": "Posetite Nas",
     "breadcrumb": {
@@ -217,6 +217,7 @@
     "Chili Savory Soup":"Čili Pikantna Supa",
     "Mojito":"Mojito"
   },
+  "shopnow":"PREGLEDAJ MENI",
   "futer": "Copyright 2024, Anja Meštrović i Staša Žujković, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta u Beogradu"
   
     

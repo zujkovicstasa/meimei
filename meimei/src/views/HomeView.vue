@@ -19,9 +19,16 @@
         <div v-for="pr in promo" class="card" :key="pr.id"> 
           <div class="dish-name">{{ $t( pr.category + '.' + pr.id + '.name') }}</div>
           <img :src="pr.image" alt="dish image" class="dish-image">
-          <div class="dish-rate">{{$t("smanjena")}}: {{ pr.priceSmall.toFixed(2) }}</div>
+          <div class="dish-rate">{{$t("smanjena")}}: €{{ pr.priceSmall.toFixed(2) }}</div>
         </div>
       </div>
+      <br><br>
+      <div class="card-container">
+        <router-link :to="{ name: 'Menu' }">
+          <button>{{$t("shopnow")}}-></button>
+        </router-link>
+      </div>
+      
   </div>
 </template>
 
@@ -102,6 +109,18 @@ export default {
   border-radius: 4px;
   margin-bottom: 20px;
 }
+  button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ff4d4d;
+  }
 
 .dish-name{
   margin-top:5px;

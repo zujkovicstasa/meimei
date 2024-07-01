@@ -1,6 +1,5 @@
 <template>
     <div class="map-container">
-      <!-- Replace the src attribute value with your own Google Maps embed link -->
       <iframe
         :src="mapSrc"
         class="map-iframe"
@@ -13,7 +12,7 @@
         allowfullscreen="true">
       </iframe>
     </div>
-  </template>
+</template>
   
   <script>
   export default {
@@ -36,6 +35,7 @@
     width: 100%;
     height: 400px;
     border: 0;
+    outline: none !important;
   }
   </style>
   
